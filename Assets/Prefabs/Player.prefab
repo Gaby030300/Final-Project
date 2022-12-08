@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolGameObject: {fileID: 4791214714999422243, guid: 4bce5f1d1ad21a04daeb6cb92cde3cad, type: 3}
-  numObjectsOnStart: 10
+  numObjectsOnStart: 5
 --- !u!114 &2570965068770801382
 MonoBehaviour:
   m_ObjectHideFlags: 0
