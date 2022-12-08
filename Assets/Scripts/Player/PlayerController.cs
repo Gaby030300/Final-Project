@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 move, mouseLook;
     private Vector3 rotationTarget;
     Rigidbody rb;
+    private ShootController shoot;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -20,14 +21,25 @@ public class PlayerController : MonoBehaviour
     {
         mouseLook = context.ReadValue<Vector2>();
     }
+    void Awake()
+    {
+        shoot = GetComponent<ShootController>();
+    }
     void Start()
     {
        rb = GetComponent<Rigidbody>(); 
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        FollowMouseLook();       
+        if (Input.GetButton("Fire1"))
+        {
+            if (shoot.CanShoot())
+            {
+                shoot.Shoot();
+            }
+        }
+        FollowMouseLook();
     }
 
     public void MovePlayerWithAim()
@@ -41,8 +53,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.15f);
         }        
         Vector3 movement = new Vector3(move.x, 0f, move.y);
-        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
-        //transform.Translate(movement, Space.World);        
+        transform.Translate(movement * speed * Time.deltaTime, Space.World);        
 
     }
     public void FollowMouseLook()
