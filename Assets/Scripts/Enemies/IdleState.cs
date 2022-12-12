@@ -11,24 +11,22 @@ public class IdleState : State
     public override State RunCurrentState()
     {
         rbParent.velocity = Vector3.zero;
+        StartCoroutine(ChangeState());
         if (canSeeThePlayer)
         {
+            StopAllCoroutines();
+            canSeeThePlayer = false;
             return chaseState;
         }
         else
         {
-            Debug.Log("Not Chased yet");
             return this;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    IEnumerator ChangeState()
     {
+        yield return new WaitForSeconds(2);
         canSeeThePlayer = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        canSeeThePlayer = false;        
     }
 }

@@ -14,11 +14,11 @@ public class GetAwayState : State
         rbParent.AddRelativeForce(Vector3.back * 2, ForceMode.Impulse);
         //rbParent.AddForce(Vector3.back * 2, ForceMode.Impulse);
         float distance = Vector3.Distance(rbParent.position, player.position);
-        if (distance > 10)
-        {
-            return idleState;
-        }
-        return this;
+        //if (distance > 10)
+        //{
+        //}
+        //return this;
+        return idleState;
 
     }
 }

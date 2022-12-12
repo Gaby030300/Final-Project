@@ -11,7 +11,6 @@ public class Attackstate : State
     public ChaseState chaseState;
     public override State RunCurrentState()
     {
-        rbParent.transform.LookAt(player);
         float distance = Vector3.Distance(rbParent.position, player.position);
         if (distance > 4)
         {
@@ -22,6 +21,14 @@ public class Attackstate : State
             takingDamage = false;
             return getAway;
         }
-        return this;
+        rbParent.transform.LookAt(player);
+        player.GetComponent<PlayerHealth>()?.RestHealt(5);
+        Attack();
+        return getAway;
+    }
+
+    public void Attack()
+    {
+        player.GetComponent<Rigidbody>().AddForce(transform.forward * 14, ForceMode.Impulse);
     }
 }

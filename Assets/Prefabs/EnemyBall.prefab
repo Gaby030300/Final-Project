@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8097623760194964776}
   - component: {fileID: 4633354362944465617}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: EnemyBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,4 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeTime: 5
   damage: 5
-  enemyBullet: 0
+  enemyBullet: 1
