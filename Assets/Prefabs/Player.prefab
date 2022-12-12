@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 2570965068770801382}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   currentAmmunition: 5
   maxAmmunition: 5
   unlimitedAmmunition: 1
-  ballVelocity: 10
+  ballVelocity: 20
   shootFrecuency: 0.2
 --- !u!114 &9171474068189579721
 MonoBehaviour:
