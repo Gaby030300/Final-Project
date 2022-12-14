@@ -390,6 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1331630570720880286}
   - component: {fileID: 1331630570720880287}
+  - component: {fileID: 8761159960624930690}
   m_Layer: 0
   m_Name: IdleState
   m_TagString: Untagged
@@ -427,6 +428,19 @@ MonoBehaviour:
   player: {fileID: 0}
   stateManager: {fileID: 1331630570475405752}
   stayRange: {fileID: 1331630570967098696}
+--- !u!65 &8761159960624930690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331630570720880257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 35, y: 1.997112, z: 35}
+  m_Center: {x: 0, y: 0.9971129, z: 0}
 --- !u!1 &1331630570967098699
 GameObject:
   m_ObjectHideFlags: 0

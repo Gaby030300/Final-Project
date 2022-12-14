@@ -12,12 +12,9 @@ public class IdleState : State
     public override State RunCurrentState()
     {
         stateManager.StopMoving();
-        StartCoroutine(ChangeState());
         if (canSeeThePlayer)
         {
-            StopAllCoroutines();
             stateManager.StartToMove();
-            canSeeThePlayer = false;
             return chaseState;
         }
         else
@@ -25,10 +22,15 @@ public class IdleState : State
             return this;
         }
     }
-
-    IEnumerator ChangeState()
+    private void OnTriggerEnter(Collider other)
     {
-        yield return new WaitForSeconds(2);
-        canSeeThePlayer = true;
+        if(other.CompareTag("Player"))
+            canSeeThePlayer = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+            canSeeThePlayer = false;
     }
 }
