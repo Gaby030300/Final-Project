@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class StateManager : MonoBehaviour
 {
     [SerializeField] State currentState;
-    void Update()
+    [SerializeField] AIPath pathFinder;
+    [SerializeField] AIDestinationSetter destinationSetter;
+
+    void LateUpdate()
     {
         RunStateMachine();
     }
@@ -24,5 +28,20 @@ public class StateManager : MonoBehaviour
     private void SwitchToTheNextState(State nextState)
     {
         currentState = nextState;
+    }
+
+    public void StartToMove()
+    {
+        pathFinder.canMove = true;
+    }
+
+    public void StopMoving()
+    {
+        pathFinder.canMove = false;
+    }
+
+    public void ChangeDestination(Transform destination)
+    {
+        destinationSetter.target = destination;
     }
 }

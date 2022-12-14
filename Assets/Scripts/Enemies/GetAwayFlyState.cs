@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class GetAwayFlyState : State
 {
+    [SerializeField] Transform player;
     [SerializeField] Rigidbody rbParent;
-    [SerializeField] StayRangeState stayRange;
+    [SerializeField] IdleFlyState idleFlyState;
+    [SerializeField] StateManager stateManager;
     public override State RunCurrentState()
     {
-        
-        rbParent.AddRelativeForce((Vector3.back*14 + Vector3.up*8).normalized , ForceMode.Impulse);
-        return stayRange;
+        stateManager.StopMoving();
+        rbParent.AddRelativeForce(Vector3.back * 28, ForceMode.Impulse);
+        return idleFlyState;
     }
 }
