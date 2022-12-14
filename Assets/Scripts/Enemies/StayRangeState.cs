@@ -4,36 +4,43 @@ using UnityEngine;
 
 public class StayRangeState : State
 {
-    [SerializeField] Transform player;
-    [SerializeField] Rigidbody rbParent;
-    [SerializeField] GetAwayFlyState getAwayState;
-    [SerializeField] AttackRangeState attackRangeState;
-    [SerializeField] IdleFlyState idleFlyState;
+    [SerializeField] Transform pointToShoot,player;
     [SerializeField] ShootController shootController;
-    [SerializeField] float speed;
+    [SerializeField] Rigidbody rbParent;
+    [SerializeField] StateManager stateManager;
+    [SerializeField] GetAwayFlyState getAwayState;
+    bool haveToRetreat;
     public override State RunCurrentState()
     {
-        Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        rbParent.MovePosition(pos);
-        rbParent.transform.LookAt(player);
-        float distance = Vector3.Distance(rbParent.position, player.position);
-        if (shootController.CanShoot())
-        {
-            shootController.Shoot();
-        }
-        if (rbParent.position.y > 7)
-        {
-            rbParent.velocity = Vector3.zero;
-            return idleFlyState;
-        }
-        if(distance < 10)
+        rbParent.velocity = Vector3.zero;
+        if (haveToRetreat)
         {
             return getAwayState;
         }
-        //if (distance < 10)
-        //{
-        //    return attackRangeState;
-        //}
+        else
+        {
+            pointToShoot.LookAt(player);
+            if (shootController.CanShoot())
+            {
+                shootController.Shoot();
+            }
+        }
         return this;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            haveToRetreat = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            haveToRetreat = false;
+        }        
     }
 }

@@ -4,27 +4,16 @@ using UnityEngine;
 
 public class Attackstate : State
 {
-    public bool takingDamage;
-    public Rigidbody rbParent;
-    public Transform player;
-    public GetAwayState getAway;
-    public ChaseState chaseState;
+    [SerializeField] Transform player;
+    [SerializeField] IdleState idleState;
+    [SerializeField] StateManager stateManager;
+    [SerializeField] float forceToPush;
     public override State RunCurrentState()
     {
-        float distance = Vector3.Distance(rbParent.position, player.position);
-        if (distance > 4)
-        {
-            return chaseState;
-        }
-        if (takingDamage)
-        {
-            takingDamage = false;
-            return getAway;
-        }
-        rbParent.transform.LookAt(player);
+        stateManager.StopMoving();
         player.GetComponent<PlayerHealth>()?.RestHealt(5);
         Attack();
-        return getAway;
+        return idleState;
     }
 
     public void Attack()
