@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     private ShootController shoot;
 
+    [SerializeField] private float checkOffset = 1f;
+    [SerializeField] private float checkRadious = 2f;
+
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -30,7 +34,7 @@ public class PlayerController : MonoBehaviour
        rb = GetComponent<Rigidbody>(); 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetButton("Fire1"))
         {
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         FollowMouseLook();
+        ActivateZipLine();
     }
 
     public void MovePlayerWithAim()
@@ -65,5 +70,19 @@ public class PlayerController : MonoBehaviour
             rotationTarget = hit.point;
         }
         MovePlayerWithAim();
+    }
+    public void ActivateZipLine()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position + new Vector3(0, checkOffset, 0), checkRadious, Vector3.up);
+            foreach (RaycastHit hit in hits)
+            {
+                if (hit.collider.tag == "Zipline")
+                {
+                    hit.collider.GetComponent<ZipLine>().StartZipLine(gameObject);
+                }
+            }
+        }
     }
 }
