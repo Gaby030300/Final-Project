@@ -18,6 +18,6 @@ public class Attackstate : State
 
     public void Attack()
     {
-        player.GetComponent<Rigidbody>().AddForce(transform.forward * 14, ForceMode.Impulse);
+        player.GetComponent<Rigidbody>().AddForce(transform.forward * forceToPush, ForceMode.Impulse);
     }
 }
