@@ -11,10 +11,8 @@ public class IdleFlyState : State
     public override State RunCurrentState()
     {
         stateManager.StopMoving();
-        StartCoroutine(ChangeState());
         if (canSeeThePlayer)
         {
-            StopAllCoroutines();
             stateManager.ChangeDestination(player);
             stateManager.StartToMove();
             canSeeThePlayer = false;
@@ -26,9 +24,13 @@ public class IdleFlyState : State
         }
     }
 
-    IEnumerator ChangeState()
+    private void OnTriggerEnter(Collider other)
     {
-        yield return new WaitForSeconds(1);
         canSeeThePlayer = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canSeeThePlayer = false;        
     }
 }
