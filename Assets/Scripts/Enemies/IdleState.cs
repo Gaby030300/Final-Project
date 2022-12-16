@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class IdleState : State
 {
     public bool canSeeThePlayer;
-    public ChaseState chaseState;
-    public Rigidbody rbParent;
+    public State chaseState;
+    [SerializeField] StateManager stateManager;
 
     public override State RunCurrentState()
     {
-        rbParent.velocity = Vector3.zero;
-        StartCoroutine(ChangeState());
+        stateManager.StopMoving();
         if (canSeeThePlayer)
         {
-            StopAllCoroutines();
-            canSeeThePlayer = false;
+            stateManager.StartToMove();
             return chaseState;
         }
         else
@@ -23,10 +22,15 @@ public class IdleState : State
             return this;
         }
     }
-
-    IEnumerator ChangeState()
+    private void OnTriggerEnter(Collider other)
     {
-        yield return new WaitForSeconds(2);
-        canSeeThePlayer = true;
+        if(other.CompareTag("Player"))
+            canSeeThePlayer = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+            canSeeThePlayer = false;
     }
 }

@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class GetAwayState : State
 {
-    public Transform player;
-    public Rigidbody rbParent;
-    public IdleState idleState;
-    public bool canBack;
+    [SerializeField] Transform player;
+    [SerializeField] Rigidbody rbParent;
+    [SerializeField] IdleState idleState;
+    [SerializeField] bool canBack;
+    [SerializeField] StateManager stateManager;
     public override State RunCurrentState()
     {
-        //rbParent.transform.LookAt(player);
+        Debug.Log("Se retira");
+        stateManager.StopMoving();
+        rbParent.transform.LookAt(player);
         rbParent.AddRelativeForce(Vector3.back * 2, ForceMode.Impulse);
-        //rbParent.AddForce(Vector3.back * 2, ForceMode.Impulse);
-        float distance = Vector3.Distance(rbParent.position, player.position);
-        //if (distance > 10)
-        //{
-        //}
-        //return this;
         return idleState;
-
     }
 }
