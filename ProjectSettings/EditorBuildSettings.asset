@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/daniel.unity
     guid: 2cd4474d3d9b2554f9c4a7e771ebc872
+  - enabled: 1
+    path: Assets/Scenes/Level1Prototype.unity
+    guid: b956502d1f704d34fb5523b9ae23c737
+  - enabled: 1
+    path: Assets/Scenes/InsideScenes/InteriorSceneBuilding2.unity
+    guid: 1c1da0b1852a4cb46a9abf1a5f92e368
+  - enabled: 1
+    path: Assets/Scenes/Level1Part2Prototype.unity
+    guid: af37d7ba8abd94d40ab994bc9914e489
   m_configObjects: {}
