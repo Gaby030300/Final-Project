@@ -11,7 +11,7 @@ public class Attackstate : State
     public override State RunCurrentState()
     {
         stateManager.StopMoving();
-        player.GetComponent<PlayerHealth>()?.RestHealt(5);
+        //player.GetComponent<PlayerHealth>()?.RestHealt(5);
         Attack();
         return idleState;
     }
