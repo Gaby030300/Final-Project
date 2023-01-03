@@ -87,4 +87,16 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void StopMoving()
+    {
+        StartCoroutine(SpeedSlow());
+    }
+
+    IEnumerator SpeedSlow()
+    {
+        speed /= 100;
+        yield return new WaitForSeconds(1);
+        speed *= 100;
+    }
 }

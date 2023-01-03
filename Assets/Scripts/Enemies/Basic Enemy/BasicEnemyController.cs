@@ -29,6 +29,7 @@ public class BasicEnemyController : MonoBehaviour
 
     public void StartAttack()
     {
+        player.GetComponent<PlayerController>().StopMoving();
         anim.SetBool("Attacking", true);
     }
     public void StopAttack()

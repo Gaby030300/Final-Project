@@ -17,7 +17,7 @@ public class ZombieAttack : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         currentTimeToAttack = timeToAttack;
         player.GetComponent<PlayerHealth>().RestHealt(damage);
-        player.GetComponent<Rigidbody>().AddForce(animator.transform.position-player.transform.position* forceToPush, ForceMode.Impulse);
+        player.GetComponent<Rigidbody>().AddRelativeForce((Vector3.back + player.transform.position).normalized * forceToPush, ForceMode.Impulse);
         animator.SetBool("Attacking", false);
     }
 
