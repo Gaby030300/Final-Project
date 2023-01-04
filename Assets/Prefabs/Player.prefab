@@ -487,6 +487,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  checkOffset: 1
+  checkRadious: 2
+  dashVelocity: 15
 --- !u!1 &2570965069671305716
 GameObject:
   m_ObjectHideFlags: 0
