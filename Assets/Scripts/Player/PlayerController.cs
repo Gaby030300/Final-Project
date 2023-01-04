@@ -93,11 +93,13 @@ public class PlayerController : MonoBehaviour
     }
     public void ActivateZipLine()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E)) 
         {
+            Debug.Log("hit");
             RaycastHit[] hits = Physics.SphereCastAll(transform.position + new Vector3(0, checkOffset, 0), checkRadious, Vector3.up);
             foreach (RaycastHit hit in hits)
             {
+                Debug.Log("hit2");
                 if (hit.collider.tag == "Zipline")
                 {
                     hit.collider.GetComponent<ZipLine>().StartZipLine(gameObject);
