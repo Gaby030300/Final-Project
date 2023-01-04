@@ -112,4 +112,16 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(3);
         isDashing = true;
     }
+
+    public void StopMoving()
+    {
+        StartCoroutine(SpeedSlow());
+    }
+
+    IEnumerator SpeedSlow()
+    {
+        speed /= 100;
+        yield return new WaitForSeconds(2.5f);
+        speed *= 100;
+    }
 }
