@@ -859,7 +859,7 @@ Transform:
   m_Children:
   - {fileID: 467706451235718806}
   m_Father: {fileID: 8662262443408463299}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4259683290451978612
 GameObject:
@@ -2208,7 +2208,7 @@ Transform:
   - {fileID: 1072783457299219048}
   - {fileID: 3462743472737715908}
   m_Father: {fileID: 8662262443408463299}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8201721538590071645
 GameObject:
@@ -2278,9 +2278,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 250823009003263927}
+  - {fileID: 9204285275317039894}
   - {fileID: 3775946132947989847}
   - {fileID: 5353318869785108541}
-  - {fileID: 9204285275317039894}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2359,6 +2359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealt: 0
   maxHealt: 40
+  capsuleCollider: {fileID: 9204285275989328568}
+  isAlive: 0
 --- !u!114 &9204285275989328571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2570,7 +2572,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8662262443408463299}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &9204285275317039888
 BoxCollider:
@@ -2598,4 +2600,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemyController: {fileID: 9204285275989328569}
+  enemyHealth: {fileID: 9204285275989328570}
   canAttack: 0

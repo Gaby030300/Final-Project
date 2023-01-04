@@ -5,10 +5,11 @@ using UnityEngine;
 public class ZombieAttackArea : MonoBehaviour
 {
     [SerializeField] BasicEnemyController basicEnemyController;
+    [SerializeField] EnemyHealth enemyHealth;
     public bool canAttack;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && enemyHealth.isAlive)
         {
             canAttack = true;
             basicEnemyController.StartAttack();
