@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {    
-    public float speed;    
+    public float speed;
     private Vector2 move, mouseLook;
     private Vector3 rotationTarget;
     Rigidbody rb;
@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float checkOffset = 1f;
     [SerializeField] private float checkRadious = 2f;
 
+    
+    private GameObject focalPoint;
+    [SerializeField] private float dashVelocity = 10.0f;
+    private bool isDashing = true;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -31,7 +35,13 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-       rb = GetComponent<Rigidbody>(); 
+       rb = GetComponent<Rigidbody>();
+       focalPoint = GameObject.Find("_Outpoint");
+    }
+
+    private void Update()
+    {
+        Dash();
     }
 
     void FixedUpdate()
@@ -45,8 +55,18 @@ public class PlayerController : MonoBehaviour
         }
         FollowMouseLook();
         ActivateZipLine();
+        
     }
 
+    private void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isDashing)
+        {
+            rb.AddForce(focalPoint.transform.forward * dashVelocity, ForceMode.Impulse);
+            isDashing = false;
+            StartCoroutine(DashTime());
+        }        
+    }
     public void MovePlayerWithAim()
     {
         var lookPos = rotationTarget - transform.position;
@@ -86,6 +106,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+    IEnumerator DashTime() 
+    {        
+        yield return new WaitForSeconds(3);
+        isDashing = true;
     }
 
     public void StopMoving()
