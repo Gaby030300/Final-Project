@@ -107,6 +107,15 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Key"))
+        {            
+            OpenMechanism.keyCount++;
+            Destroy(other.gameObject);
+            Debug.Log(OpenMechanism.keyCount);
+        }
+    }
     IEnumerator DashTime() 
     {        
         yield return new WaitForSeconds(3);
