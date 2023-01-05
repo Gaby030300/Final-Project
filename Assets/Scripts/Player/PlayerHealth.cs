@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int currentHealt;
-    [SerializeField] int maxHealt;
-
+    public float currentHealt;
+    public int maxHealt;
+    Rigidbody player;
     private void Start()
     {
+        player = GetComponent<Rigidbody>();
         currentHealt = maxHealt;
     }
 
     public void RestHealt(int healtToLoss)
     {
+        player.AddRelativeForce(Vector3.back * (healtToLoss / 2), ForceMode.Impulse);
         currentHealt -= healtToLoss;
         if (currentHealt <= 0)
             PlayerDie();
+    }
+    
+    public void AddHealt(int healtToLoss)
+    {
+        currentHealt += healtToLoss;
+        if (currentHealt > maxHealt)
+            currentHealt = maxHealt;
     }
 
     public void PlayerDie()

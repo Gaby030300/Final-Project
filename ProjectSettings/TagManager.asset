@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Enemy
   - Zipline
+<<<<<<< HEAD
   - Key
+=======
+  - ToAim
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
