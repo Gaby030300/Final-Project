@@ -11,13 +11,13 @@ public class Attackstate : State
     public override State RunCurrentState()
     {
         stateManager.StopMoving();
-        //player.GetComponent<PlayerHealth>()?.RestHealt(5);
+        player.GetComponent<PlayerHealth>()?.RestHealt(5);
         Attack();
         return idleState;
     }
 
     public void Attack()
     {
-        player.GetComponent<Rigidbody>().AddForce(transform.forward * forceToPush, ForceMode.Impulse);
+        player.GetComponent<Rigidbody>().AddForce(transform.forward * 14, ForceMode.Impulse);
     }
 }
