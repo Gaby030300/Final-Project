@@ -44,10 +44,4 @@ public class ShootController : MonoBehaviour
         ball.transform.rotation = outPoint.rotation;
         ball.GetComponent<Rigidbody>().velocity = outPoint.forward * ballVelocity;
     }
-
-    public void AddAmmo(int amountToAdd)
-    {
-        currentAmmunition += amountToAdd;
-        currentAmmunition = currentAmmunition > maxAmmunition ? maxAmmunition : currentAmmunition;
-    }
 }

@@ -1,39 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
+using DG.Tweening;
+
 
 public class BasicEnemyController : MonoBehaviour
 {
-    Transform player;
-    Rigidbody rb;
-    [SerializeField] Animator anim;
-    [SerializeField] float distance;
-    AIPath aIPath;
-    AIDestinationSetter destinationSetter;
+    public Transform target;
+    public float speed;
+    bool isAttacking;
+    Rigidbody rig;
 
     private void Start()
     {
-        aIPath = GetComponent<AIPath>();
-        destinationSetter = GetComponent<AIDestinationSetter>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        rig = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        distance = Vector3.Distance(transform.position, player.position);
-        anim.SetFloat("Distance", distance);
+        if (!isAttacking)
+        {
+            Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            rig.MovePosition(pos);
+            transform.LookAt(target);
+        }
     }
 
-    public void StartAttack()
+    private void OnCollisionEnter(Collision collision)
     {
-        player.GetComponent<PlayerController>().StopMoving();
-        anim.SetBool("Attacking", true);
+        rig.velocity = Vector3.zero;
     }
-    public void StopAttack()
+
+    private void OnTriggerEnter(Collider other)
     {
-        anim.SetBool("Attacking",false);
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(Attack());
+            other.GetComponent<PlayerHealth>().RestHealt(5);
+            other.GetComponent<Rigidbody>()?.AddForce(transform.forward * 8, ForceMode.Impulse);
+        }
+    }
+
+    IEnumerator Attack()
+    {
+        rig.velocity = Vector3.zero;
+        isAttacking = true;
+        yield return new WaitForSeconds(2);
+        isAttacking = false;
     }
 }
