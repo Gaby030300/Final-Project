@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     private ShootController shoot;
 
+    float whereIsLookingX;
+
     [SerializeField] private float checkOffset = 1f;
     [SerializeField] private float checkRadious = 2f;
 
@@ -20,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private GameObject focalPoint;
     [SerializeField] private float dashVelocity = 10.0f;
     private bool isDashing = true;
+
+    [SerializeField] Animator animPlayer;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -42,6 +46,39 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Dash();
+        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            //Abajo a la izquierda
+            if (transform.position.x > rotationTarget.x && transform.position.z > rotationTarget.z)
+            {
+                animPlayer.SetFloat("MovY", Input.GetAxis("Horizontal") * -1);
+                animPlayer.SetFloat("MovX", Input.GetAxis("Vertical"));
+            }
+            //Arriba a la izquierda
+            if (transform.position.x > rotationTarget.x && transform.position.z < rotationTarget.z)
+            {
+                animPlayer.SetFloat("MovY", Input.GetAxis("Vertical"));
+                animPlayer.SetFloat("MovX", Input.GetAxis("Horizontal"));
+            }
+            //Abajo a la derecha
+            if (transform.position.x < rotationTarget.x && transform.position.z > rotationTarget.z)
+            {
+                animPlayer.SetFloat("MovY", Input.GetAxis("Horizontal"));
+                animPlayer.SetFloat("MovX", Input.GetAxis("Vertical"));
+            }
+            //Arriba a la derecha
+            if (transform.position.x < rotationTarget.x && transform.position.z < rotationTarget.z)
+            {
+                animPlayer.SetFloat("MovY", Input.GetAxis("Vertical"));
+                animPlayer.SetFloat("MovX", Input.GetAxis("Horizontal"));
+            }
+
+        }
+        else
+        {
+            animPlayer.SetFloat("MovY",0f);
+            animPlayer.SetFloat("MovX",0f);            
+        }
     }
 
     void FixedUpdate()
