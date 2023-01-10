@@ -24,6 +24,13 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = true;
 
     [SerializeField] Animator animPlayer;
+    Transform cam;
+    Vector3 camForward;
+    Vector3 moveAnimator;
+    Vector3 moveInput;
+
+    float forwardAmount;
+    float turnAmount;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -41,48 +48,38 @@ public class PlayerController : MonoBehaviour
     {
        rb = GetComponent<Rigidbody>();
        focalPoint = GameObject.Find("_Outpoint");
+
+        cam = Camera.main.transform;
+
     }
 
     private void Update()
     {
         Dash();
-        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-        {
-            //Abajo a la izquierda
-            if (transform.position.x > rotationTarget.x && transform.position.z > rotationTarget.z)
-            {
-                animPlayer.SetFloat("MovY", Input.GetAxis("Horizontal") * -1);
-                animPlayer.SetFloat("MovX", Input.GetAxis("Vertical"));
-            }
-            //Arriba a la izquierda
-            if (transform.position.x > rotationTarget.x && transform.position.z < rotationTarget.z)
-            {
-                animPlayer.SetFloat("MovY", Input.GetAxis("Vertical"));
-                animPlayer.SetFloat("MovX", Input.GetAxis("Horizontal"));
-            }
-            //Abajo a la derecha
-            if (transform.position.x < rotationTarget.x && transform.position.z > rotationTarget.z)
-            {
-                animPlayer.SetFloat("MovY", Input.GetAxis("Horizontal"));
-                animPlayer.SetFloat("MovX", Input.GetAxis("Vertical"));
-            }
-            //Arriba a la derecha
-            if (transform.position.x < rotationTarget.x && transform.position.z < rotationTarget.z)
-            {
-                animPlayer.SetFloat("MovY", Input.GetAxis("Vertical"));
-                animPlayer.SetFloat("MovX", Input.GetAxis("Horizontal"));
-            }
-
-        }
-        else
-        {
-            animPlayer.SetFloat("MovY",0f);
-            animPlayer.SetFloat("MovX",0f);            
-        }
     }
 
     void FixedUpdate()
     {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        if (cam != null)
+        {
+            camForward = Vector3.Scale(cam.up,new Vector3(1,0,1)).normalized;
+            moveAnimator = vertical * camForward + horizontal * cam.right;
+        }
+        else
+        {
+            moveAnimator = vertical * Vector3.forward + horizontal * Vector3.right;
+        }
+
+        if (moveAnimator.magnitude > 1)
+        {
+            moveAnimator.Normalize();
+        }
+
+        Move(moveAnimator);
+
         if (Input.GetButton("Fire1"))
         {
             if (shoot.CanShoot())
@@ -92,7 +89,6 @@ public class PlayerController : MonoBehaviour
         }
         FollowMouseLook();
         ActivateZipLine();
-        
     }
 
     private void Dash()
@@ -160,5 +156,30 @@ public class PlayerController : MonoBehaviour
         speed /= 100;
         yield return new WaitForSeconds(2.5f);
         speed *= 100;
+    }
+
+    void Move(Vector3 move)
+    {
+        if(move.magnitude > 1)
+        {
+            move.Normalize();
+        }
+
+        this.moveInput = move;
+        ConvertMoveInput();
+        UpdateAnimator();
+    }
+
+    void ConvertMoveInput()
+    {
+        Vector3 localMove = transform.InverseTransformDirection(moveInput);
+        turnAmount = localMove.x;
+
+        forwardAmount = localMove.z;
+    }
+    void UpdateAnimator()
+    {
+        animPlayer.SetFloat("Forward",forwardAmount, 0.1f, Time.deltaTime);
+        animPlayer.SetFloat("Turn", turnAmount, 0.1f, Time.deltaTime);
     }
 }
