@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 rotationTarget;
     Rigidbody rb;
     private ShootController shoot;
+    [SerializeField]LayerMask layer;
 
     [SerializeField] private float checkOffset = 1f;
     [SerializeField] private float checkRadious = 2f;
@@ -116,7 +117,7 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(mouseLook);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit,Mathf.Infinity,layer))
         {
             rotationTarget = hit.point;
         }
