@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     private ShootController shoot;
 
-    float whereIsLookingX;
-
     [SerializeField] private float checkOffset = 1f;
     [SerializeField] private float checkRadious = 2f;
 

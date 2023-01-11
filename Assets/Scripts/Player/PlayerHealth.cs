@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void RestHealt(int healtToLoss)
     {
+        player.GetComponent<PlayerController>().StopMoving();
         player.AddRelativeForce(Vector3.back * (healtToLoss / 2), ForceMode.Impulse);
         currentHealt -= healtToLoss;
         if (currentHealt <= 0)

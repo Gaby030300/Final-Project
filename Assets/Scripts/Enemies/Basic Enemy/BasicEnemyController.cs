@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class BasicEnemyController : MonoBehaviour
 {
-    Transform player;
+    GameObject player;
     Rigidbody rb;
     [SerializeField] Animator anim;
     [SerializeField] float distance;
@@ -16,20 +16,35 @@ public class BasicEnemyController : MonoBehaviour
     {
         aIPath = GetComponent<AIPath>();
         destinationSetter = GetComponent<AIDestinationSetter>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        distance = Vector3.Distance(transform.position, player.position);
+        distance = Vector3.Distance(transform.position, player.transform.position);
         anim.SetFloat("Distance", distance);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StartAttack();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StopAttack();
+        }
     }
 
     public void StartAttack()
     {
-        player.GetComponent<PlayerController>().StopMoving();
         anim.SetBool("Attacking", true);
     }
     public void StopAttack()

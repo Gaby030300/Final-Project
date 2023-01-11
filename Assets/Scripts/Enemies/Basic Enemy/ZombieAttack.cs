@@ -13,10 +13,12 @@ public class ZombieAttack : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        zombieAttackArea = animator.GetComponent<ZombieAttackArea>();
+        //zombieAttackArea = animator.GetComponent<ZombieAttackArea>();
         player = GameObject.FindGameObjectWithTag("Player");
         currentTimeToAttack = timeToAttack;
+        //Aqui va el problema
         player.GetComponent<PlayerHealth>().RestHealt(damage);
+        Destroy(animator.gameObject);
         player.GetComponent<Rigidbody>().AddRelativeForce((Vector3.back + player.transform.position).normalized * forceToPush, ForceMode.Impulse);
         animator.SetBool("Attacking", false);
     }
