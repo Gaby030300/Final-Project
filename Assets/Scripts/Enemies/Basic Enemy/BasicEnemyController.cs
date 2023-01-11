@@ -31,24 +31,15 @@ public class BasicEnemyController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartAttack();
+            anim.SetBool("Attacking", true);            
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            StopAttack();
-        }
-    }
-
-    public void StartAttack()
-    {
-        anim.SetBool("Attacking", true);
-    }
-    public void StopAttack()
-    {
-        anim.SetBool("Attacking",false);
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        anim.SetBool("Attacking",false);            
+    //    }
+    //}
 }

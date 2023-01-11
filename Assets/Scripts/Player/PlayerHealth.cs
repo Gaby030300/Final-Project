@@ -6,17 +6,19 @@ public class PlayerHealth : MonoBehaviour
 {
     public float currentHealt;
     public int maxHealt;
-    Rigidbody player;
-    private void Start()
+    [SerializeField] Rigidbody player;
+    [SerializeField] PlayerController playerController;
+    private void Awake()
     {
+        playerController = GetComponent<PlayerController>();
         player = GetComponent<Rigidbody>();
         currentHealt = maxHealt;
     }
 
     public void RestHealt(int healtToLoss)
     {
-        player.GetComponent<PlayerController>().StopMoving();
-        player.AddRelativeForce(Vector3.back * (healtToLoss / 2), ForceMode.Impulse);
+        playerController.GetComponent<PlayerController>().StopMoving();
+        player.AddRelativeForce(Vector3.back * (5 / 2), ForceMode.Impulse);
         currentHealt -= healtToLoss;
         if (currentHealt <= 0)
             PlayerDie();

@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator SpeedSlow()
     {
         speed /= 100;
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
         speed *= 100;
     }
 

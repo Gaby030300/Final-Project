@@ -2388,7 +2388,7 @@ MonoBehaviour:
   orientation: 0
   enableRotation: 1
   autoRepath:
-    mode: 1
+    mode: 2
     interval: 1
     sensitivity: 10
     maximumInterval: 2
@@ -2601,4 +2601,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemyController: {fileID: 9204285275989328569}
   enemyHealth: {fileID: 9204285275989328570}
+  player: {fileID: 0}
   canAttack: 0
