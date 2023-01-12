@@ -231,6 +231,7 @@ MonoBehaviour:
   speedZip: 200
   zipScale: 0.2
   arrivalThreshold: 0.4
+  cable: {fileID: 0}
   ZipTransform: {fileID: 5092242897089732416}
 --- !u!1 &9107730110410355945
 GameObject:

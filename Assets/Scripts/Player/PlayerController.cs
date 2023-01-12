@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             if (shoot.CanShoot())
             {
-                shoot.Shoot();
+                shoot.Shoot ();
             }
         }
         FollowMouseLook();
@@ -127,11 +127,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E)) 
         {
-            Debug.Log("hit");
             RaycastHit[] hits = Physics.SphereCastAll(transform.position + new Vector3(0, checkOffset, 0), checkRadious, Vector3.up);
             foreach (RaycastHit hit in hits)
             {
-                Debug.Log("hit2");
                 if (hit.collider.tag == "Zipline")
                 {
                     hit.collider.GetComponent<ZipLine>().StartZipLine(gameObject);
@@ -139,6 +137,15 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Key"))
+        {
+            OpenMechanism.keyCount++;
+            Destroy(other.gameObject);
+        }
+    }
+
     IEnumerator DashTime() 
     {        
         yield return new WaitForSeconds(3);
