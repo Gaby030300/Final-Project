@@ -18,8 +18,11 @@ public class WiretaskController : MonoBehaviour
 
     public bool isTaskCompleted = false;
 
+    SceneLoader sceneLoader;
+
     private void Start()
     {
+        sceneLoader = SceneLoader.instance;
         _avaliableColor = new List<Color>(_wireColors);
         _availableLeftWireIndex = new List<int>();
         _availableRightWireIndex = new List<int>();
@@ -64,6 +67,7 @@ public class WiretaskController : MonoBehaviour
                 if(successfulWires >= _rightWires.Count)
                 {
                     Debug.Log("Task Completed");
+                    sceneLoader.UnLoadScene("Assets/Scenes/Fix Wires 1");
                 }
                 else
                 {

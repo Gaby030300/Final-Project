@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 09ba5e0bffb4e8f46a9c1253b00380ba
+  - enabled: 1
     path: Assets/Scenes/Level1Prototype Daniel.unity
     guid: 17960aa1a814e8f458632b8bc3cbfa8e
   - enabled: 1
@@ -17,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1Prototype.unity
     guid: b956502d1f704d34fb5523b9ae23c737
+  - enabled: 1
+    path: Assets/Scenes/Fix Wires 1.unity
+    guid: edad2941443520c4c96288809d8d62a9
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 2f7b47df3be79114ab0bd5fb31eecf86
   m_configObjects: {}

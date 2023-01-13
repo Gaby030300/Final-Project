@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
-    
+    [SerializeField] SceneLoader sceneLoader;
+    [SerializeField] string sceneName;
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(sceneName);
+            sceneLoader = SceneLoader.instance;
+            sceneLoader.UnLoadScene(sceneName);
         }
     }
 

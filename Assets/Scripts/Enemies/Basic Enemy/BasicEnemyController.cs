@@ -5,25 +5,19 @@ using Pathfinding;
 
 public class BasicEnemyController : MonoBehaviour
 {
-    GameObject player;
-    Rigidbody rb;
+    [SerializeField] PlayerController player;
     [SerializeField] Animator anim;
     [SerializeField] float distance;
-    AIPath aIPath;
-    AIDestinationSetter destinationSetter;
 
     private void Start()
     {
-        aIPath = GetComponent<AIPath>();
-        destinationSetter = GetComponent<AIDestinationSetter>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        rb = GetComponent<Rigidbody>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (!player.GetComponent<PlayerController>().isDeath)
+        if (!player.isDeath)
         {
             distance = Vector3.Distance(transform.position, player.transform.position);
             anim.SetFloat("Distance", distance);

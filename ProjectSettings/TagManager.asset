@@ -8,6 +8,7 @@ TagManager:
   - Zipline
   - ToAim
   - Key
+  - SceneManagerTag
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Obstacle
   - Ground
   - AimFloor
-  - 
+  - InsideLevels
   - 
   - 
   - 
