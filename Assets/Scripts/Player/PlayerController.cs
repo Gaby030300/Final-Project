@@ -86,7 +86,13 @@ public class PlayerController : MonoBehaviour
         }
 
         Move(moveAnimator);
+        Shooting();
+        FollowMouseLook();
+        ActivateZipLine();
+    }
 
+    public void Shooting()
+    {
         if (Input.GetButton("Fire1"))
         {
             if (shoot.CanShoot())
@@ -94,8 +100,6 @@ public class PlayerController : MonoBehaviour
                 shoot.Shoot();
             }
         }
-        FollowMouseLook();
-        ActivateZipLine();
     }
 
     private void Dash()

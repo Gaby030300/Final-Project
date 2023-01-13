@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class UIController : MonoBehaviour
 {
@@ -22,13 +23,15 @@ public class UIController : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
-    public void OnConfigButton()
+    public void OnConfigButton(GameObject player)
     {
         configurationPanel.SetActive(true);
+        player.GetComponent<PlayerController>().enabled = false;        
     }
 
-    public void OnCloseButton()
+    public void OnCloseButton(GameObject player)
     {
         configurationPanel.SetActive(false);
+        player.GetComponent<PlayerController>().enabled = true;        
     }
 }

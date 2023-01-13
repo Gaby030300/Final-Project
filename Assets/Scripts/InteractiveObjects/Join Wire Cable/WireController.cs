@@ -11,7 +11,6 @@ public class WireController : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
 
     private Image _image;
     private LineRenderer _lineRenderer;
-    public GameObject light;
 
     private Canvas _canvas;
     private bool _isDragStarted = false;
@@ -75,7 +74,7 @@ public class WireController : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         if (!IsLeftWire) { return; }
         // Is is successful, don't draw more lines!
-        if (isSuccess) { light.SetActive(true); }
+        if (isSuccess) { return; }
         _isDragStarted = true;
         _wireTask.currentDraggedWire = this;
     }
