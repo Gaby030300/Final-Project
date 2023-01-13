@@ -11,9 +11,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: Distance
     m_EventTreshold: 15
-  - m_ConditionMode: 2
-    m_ConditionEvent: Attacking
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -696116569827464919}
   m_Solo: 0
@@ -93,9 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796e8cec30bebf840ae0e96f58866671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToAttack: 10
-  damage: 20
-  forceToPush: 3
 --- !u!1102 &-696116569827464919
 AnimatorState:
   serializedVersion: 6
@@ -164,13 +158,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

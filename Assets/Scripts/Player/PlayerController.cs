@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     float forwardAmount;
     float turnAmount;
 
+    public bool isDeath;
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -49,7 +50,6 @@ public class PlayerController : MonoBehaviour
        focalPoint = GameObject.Find("_Outpoint");
 
         cam = Camera.main.transform;
-
     }
 
     private void Update()
@@ -59,12 +59,20 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!isDeath)
+        {
+            Movement();
+        }
+    }
+
+    private void Movement()
+    {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
         if (cam != null)
         {
-            camForward = Vector3.Scale(cam.up,new Vector3(1,0,1)).normalized;
+            camForward = Vector3.Scale(cam.up, new Vector3(1, 0, 1)).normalized;
             moveAnimator = vertical * camForward + horizontal * cam.right;
         }
         else
@@ -83,7 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             if (shoot.CanShoot())
             {
-                shoot.Shoot ();
+                shoot.Shoot();
             }
         }
         FollowMouseLook();
@@ -159,9 +167,11 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator SpeedSlow()
     {
+        animPlayer.SetBool("TakingDamage",true);
         speed /= 100;
         yield return new WaitForSeconds(1.5f);
         speed *= 100;
+        animPlayer.SetBool("TakingDamage",false);
     }
 
     void Move(Vector3 move)
@@ -187,5 +197,11 @@ public class PlayerController : MonoBehaviour
     {
         animPlayer.SetFloat("Forward",forwardAmount, 0.1f, Time.deltaTime);
         animPlayer.SetFloat("Turn", turnAmount, 0.1f, Time.deltaTime);
+    }
+
+    public void DieAnimation()
+    {
+        isDeath = true;
+        animPlayer.SetBool("IsDeath", isDeath);
     }
 }

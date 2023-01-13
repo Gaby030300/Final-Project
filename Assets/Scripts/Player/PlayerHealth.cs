@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDie()
     {
-        gameObject.SetActive(false);
+        playerController.DieAnimation();
+        //gameObject.SetActive(false);
     }
 }

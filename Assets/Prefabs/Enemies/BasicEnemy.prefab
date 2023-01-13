@@ -2602,4 +2602,5 @@ MonoBehaviour:
   basicEnemyController: {fileID: 9204285275989328569}
   enemyHealth: {fileID: 9204285275989328570}
   player: {fileID: 0}
+  damage: 5
   canAttack: 0

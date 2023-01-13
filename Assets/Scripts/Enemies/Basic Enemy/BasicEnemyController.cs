@@ -23,23 +23,22 @@ public class BasicEnemyController : MonoBehaviour
 
     private void Update()
     {
-        distance = Vector3.Distance(transform.position, player.transform.position);
-        anim.SetFloat("Distance", distance);
+        if (!player.GetComponent<PlayerController>().isDeath)
+        {
+            distance = Vector3.Distance(transform.position, player.transform.position);
+            anim.SetFloat("Distance", distance);
+        }
+        else
+        {
+            anim.SetFloat("Distance", 41f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.GetComponent<PlayerController>().isDeath)
         {
             anim.SetBool("Attacking", true);            
         }
     }
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        anim.SetBool("Attacking",false);            
-    //    }
-    //}
 }
