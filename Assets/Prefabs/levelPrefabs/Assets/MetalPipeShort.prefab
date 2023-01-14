@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4110179319086134594
+--- !u!1 &170005485394656497
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1649462509778120947}
-  - component: {fileID: 996337584321772376}
-  - component: {fileID: 4149430539133762830}
+  - component: {fileID: 1288179179682335714}
+  - component: {fileID: 7805142706821540681}
+  - component: {fileID: 4368675948080602024}
   m_Layer: 6
-  m_Name: pCube258
+  m_Name: pCube259
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1649462509778120947
+--- !u!4 &1288179179682335714
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4110179319086134594}
+  m_GameObject: {fileID: 170005485394656497}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3561028463633853407}
+  m_Father: {fileID: 3373979662639576638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &996337584321772376
+--- !u!33 &7805142706821540681
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4110179319086134594}
-  m_Mesh: {fileID: 8494710361033483254, guid: 4333dd2082f534e46a84282acd3ac17e, type: 3}
---- !u!23 &4149430539133762830
+  m_GameObject: {fileID: 170005485394656497}
+  m_Mesh: {fileID: -5358203910510919075, guid: 8365aa10f3a008b43aa14dfe9772a5ff, type: 3}
+--- !u!23 &4368675948080602024
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4110179319086134594}
+  m_GameObject: {fileID: 170005485394656497}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4188488570715189605
+--- !u!1 &2709223091157232772
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,41 +91,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3561028463633853407}
-  - component: {fileID: 9148914744049080663}
+  - component: {fileID: 3373979662639576638}
   m_Layer: 6
-  m_Name: MetalPlataform1
+  m_Name: MetalPipeShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3561028463633853407
+--- !u!4 &3373979662639576638
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4188488570715189605}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000002682209}
-  m_LocalPosition: {x: -28.623522, y: 5.2238083, z: -10.267971}
+  m_GameObject: {fileID: 2709223091157232772}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.82, y: 1.47, z: -10.267971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1649462509778120947}
+  - {fileID: 1288179179682335714}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
---- !u!65 &9148914744049080663
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4188488570715189605}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.6598587, y: 0.15058064, z: 5.4656706}
-  m_Center: {x: -26.302982, y: 1.873273, z: 10.965332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

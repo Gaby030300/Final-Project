@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5220469146617508211
+--- !u!1 &168690887042547688
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4843909106474789833}
-  - component: {fileID: 2614852956918860747}
+  - component: {fileID: 656575410073789778}
   m_Layer: 6
-  m_Name: ElectricBox
+  m_Name: Viga1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4843909106474789833
+--- !u!4 &656575410073789778
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5220469146617508211}
+  m_GameObject: {fileID: 168690887042547688}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.932014, y: 2.699911, z: -10.57}
+  m_LocalPosition: {x: 12.93, y: 2.699914, z: -8.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7713048991639170756}
+  - {fileID: 8698396604900208777}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2614852956918860747
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5220469146617508211}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.0437298, y: 4.5210676, z: 0.7160015}
-  m_Center: {x: -2.240049, y: 2.5389867, z: -10.46164}
---- !u!1 &8635256274839387400
+--- !u!1 &1975651569721796274
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,46 +40,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7713048991639170756}
-  - component: {fileID: 8755294329833560380}
-  - component: {fileID: 5678547765103335682}
+  - component: {fileID: 8698396604900208777}
+  - component: {fileID: 1046584059472940413}
+  - component: {fileID: 7863210849601827429}
   m_Layer: 6
-  m_Name: caja_de_luz_high
+  m_Name: Viga10_Vigas_Tanque_de_agua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7713048991639170756
+--- !u!4 &8698396604900208777
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8635256274839387400}
+  m_GameObject: {fileID: 1975651569721796274}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4843909106474789833}
+  m_Father: {fileID: 656575410073789778}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8755294329833560380
+--- !u!33 &1046584059472940413
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8635256274839387400}
-  m_Mesh: {fileID: 1318715406343261910, guid: 6ebc438f2be9a894da0557476c5f8aac, type: 3}
---- !u!23 &5678547765103335682
+  m_GameObject: {fileID: 1975651569721796274}
+  m_Mesh: {fileID: 4221510355205582812, guid: 8a231963200a6d744960b3a7a7f641ce, type: 3}
+--- !u!23 &7863210849601827429
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8635256274839387400}
+  m_GameObject: {fileID: 1975651569721796274}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -107,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89755fd2abbdbb74d97bf11cb89b46c6, type: 2}
+  - {fileID: 2100000, guid: c5275f957046da04d93b56f35397140b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
