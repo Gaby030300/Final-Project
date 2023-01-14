@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
         {
             OpenMechanism.keyCount++;
             Destroy(other.gameObject);
+            Debug.Log(OpenMechanism.keyCount);
         }
     }
 
