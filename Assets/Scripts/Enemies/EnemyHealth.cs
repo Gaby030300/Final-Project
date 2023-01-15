@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int currentHealt;
@@ -17,7 +18,6 @@ public class EnemyHealth : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         isAlive = true;
         anim = GetComponent<Animator>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealt = maxHealt;
     }
 
