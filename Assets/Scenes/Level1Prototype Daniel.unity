@@ -18089,6 +18089,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197924734}
     m_Modifications:
+    - target: {fileID: 2089692899, guid: dee8a094f0f1dd64cbe01d4b20fc2d64, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036068600745262871, guid: dee8a094f0f1dd64cbe01d4b20fc2d64, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7575996860478293922, guid: dee8a094f0f1dd64cbe01d4b20fc2d64, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8282605688981200432, guid: dee8a094f0f1dd64cbe01d4b20fc2d64, type: 3}
       propertyPath: m_Name
       value: Building2
