@@ -81,7 +81,6 @@ GameObject:
   - component: {fileID: 9171474068189579721}
   - component: {fileID: 2570965068770801382}
   - component: {fileID: 1832506717}
-  - component: {fileID: 224020035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -268,6 +267,7 @@ MonoBehaviour:
   unlimitedAmmunition: 0
   ballVelocity: 20
   shootFrecuency: 0.2
+  soundEffect: {fileID: 0}
 --- !u!114 &9171474068189579721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,22 +304,6 @@ MonoBehaviour:
   animPlayer: {fileID: 1433961990777185156}
   isDeath: 0
 --- !u!114 &1832506717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570965068770801307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: febc75de601ab2d4386c0bfcc932f75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealt: 0
-  maxHealt: 100
-  player: {fileID: 0}
-  playerController: {fileID: 0}
---- !u!114 &224020035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

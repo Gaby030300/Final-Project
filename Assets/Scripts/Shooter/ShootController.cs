@@ -16,8 +16,13 @@ public class ShootController : MonoBehaviour
     private float lastTimeShoot;
     private bool isPlayer;
 
+    [SerializeField] AudioClip soundEffect;
+    AudioSource audioSource;
+
+
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         if (GetComponent<PlayerController>())
         {
             isPlayer = true;
@@ -43,6 +48,8 @@ public class ShootController : MonoBehaviour
         ball.transform.position = outPoint.position;
         ball.transform.rotation = outPoint.rotation;
         ball.GetComponent<Rigidbody>().velocity = outPoint.forward * ballVelocity;
+        if(audioSource!=null)
+            audioSource.PlayOneShot(soundEffect);
     }
 
     public void AddAmmo(int amountToAdd)
