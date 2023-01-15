@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7994706050276081694}
   - component: {fileID: 5535006408005662836}
   - component: {fileID: 7647262454843225470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube262
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683890277587145278}
-  m_Layer: 0
+  - component: {fileID: 6967088086417168094}
+  m_Layer: 6
   m_Name: WoodTable2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,3 +116,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6967088086417168094
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023719207746701444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8583298, y: 0.17936492, z: 5.832279}
+  m_Center: {x: -22.581306, y: 1.8708972, z: 11.074533}

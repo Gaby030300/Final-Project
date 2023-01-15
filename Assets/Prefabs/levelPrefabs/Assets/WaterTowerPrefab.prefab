@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 777000898173333741}
   - component: {fileID: 9091473613718013980}
   - component: {fileID: 600882686003510615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Soporte1_Soportes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 713971662270925808}
   - component: {fileID: 82999376055143734}
   - component: {fileID: 3115550305832148889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Soportes_Soporte6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 5881435523166404974}
   - component: {fileID: 272092731059822152}
   - component: {fileID: 1768560965901835890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Soportes_Soporte7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 6361748960933350024}
   - component: {fileID: 643256024873853009}
   - component: {fileID: 7008350131757606201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Vigas_Viga2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 7447450136007143911}
   - component: {fileID: 826522723114633831}
   - component: {fileID: 2200926781373312011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Soportes_Soporte2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 5257407042842193770}
   - component: {fileID: 990679542377060644}
   - component: {fileID: 3238753275858209282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Soportes_Soporte4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 7213124843999653925}
   - component: {fileID: 7220661032653514246}
   - component: {fileID: 9105734306757090527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BaseConcreto_Tanque_de_agua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 5855371076461922956}
   - component: {fileID: 790179101037163995}
   - component: {fileID: 1118345302551276807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Tanquedeagua_Tanquedeagua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 409250240313820769}
   - component: {fileID: 2385671255102189590}
   - component: {fileID: 6330888003401304633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Vigas_Viga8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 577394160734502304}
   - component: {fileID: 5666608755002733972}
   - component: {fileID: 6549393233791198026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Vigas_Viga5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 1215947227859608299}
   - component: {fileID: 6433135113478134397}
   - component: {fileID: 2490095180788822227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Soportes_Soporte8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 2774022825104090799}
   - component: {fileID: 2247758949571941131}
   - component: {fileID: 516770197844395538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Vigas_Viga4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1006,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6358088649087785142}
   - component: {fileID: 1482726014000999541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WaterTowerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 644475788408449299}
   - component: {fileID: 8100429021417386690}
   - component: {fileID: 3195220621213484043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Vigas_Viga6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1154,7 +1154,7 @@ GameObject:
   - component: {fileID: 4607288267734699073}
   - component: {fileID: 2123936311732988125}
   - component: {fileID: 5343205867212563843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Soportes_Soporte5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 2660440579891943200}
   - component: {fileID: 5825808561284891360}
   - component: {fileID: 2289230073655547409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Viga1_Vigas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 3662580484628456714}
   - component: {fileID: 4244501982344573658}
   - component: {fileID: 2527620390699013806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Vigas_Viga3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,7 +1403,7 @@ GameObject:
   - component: {fileID: 1925704061563381283}
   - component: {fileID: 6727875408008534189}
   - component: {fileID: 3537412041913039328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Vigas_Viga7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 1929690354949200131}
   - component: {fileID: 1389202226082106935}
   - component: {fileID: 5700214316628727677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_Soportes_Soporte3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1569,7 +1569,7 @@ GameObject:
   - component: {fileID: 7188145695846729826}
   - component: {fileID: 7377889691176386153}
   - component: {fileID: 8124889159886311062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tanque_de_agua_TopeTanque_Tanquedeagua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
