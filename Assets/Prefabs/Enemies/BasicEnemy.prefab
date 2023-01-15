@@ -2363,6 +2363,8 @@ MonoBehaviour:
   maxHealt: 40
   capsuleCollider: {fileID: 9204285275989328568}
   isAlive: 0
+  soundHurt: {fileID: 8300000, guid: 0fa5b34db33525842990e932e301a6a5, type: 3}
+  soundDie: {fileID: 8300000, guid: 8d6c63b54e51a204baf4005b7ba3f7b5, type: 3}
 --- !u!114 &9204285275989328571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2468,7 +2470,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 50
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2726,7 +2728,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
