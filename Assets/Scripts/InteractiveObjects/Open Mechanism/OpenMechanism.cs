@@ -11,10 +11,20 @@ public class OpenMechanism : MonoBehaviour
     [SerializeField] float xPosition;
     [SerializeField] float yPosition;
     [SerializeField] float zPosition;
+    [SerializeField] GameObject light;
     private void Start()
     {
         DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
     }
+
+    private void Update()
+    {
+        if (keyCount >= maxKey)
+        {
+            light.SetActive(true);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") && keyCount == maxKey)

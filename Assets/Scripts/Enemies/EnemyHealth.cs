@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int currentHealt;
     [SerializeField] int maxHealt;
-    [SerializeField] CapsuleCollider capsuleCollider;
+    [SerializeField] Collider capsuleCollider;
     Animator anim;
     public bool isAlive;
 

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4843909106474789833}
   - component: {fileID: 2614852956918860747}
+  - component: {fileID: 1339184571}
+  - component: {fileID: 1339184573}
   m_Layer: 6
   m_Name: ElectricBox
   m_TagString: Untagged
@@ -24,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5220469146617508211}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.932014, y: 2.699911, z: -10.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46,6 +48,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.0437298, y: 4.5210676, z: 0.7160015}
   m_Center: {x: -2.240049, y: 2.5389867, z: -10.46164}
+--- !u!65 &1339184571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220469146617508211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0487342, y: 5.083577, z: 1.8075209}
+  m_Center: {x: -2.1924176, y: 2.041788, z: -9.183788}
+--- !u!114 &1339184573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220469146617508211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c0b6af04a45a547b5fab746fe95a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfScene: 0
+  sceneName: Fix Wires 1
+  detector: {fileID: 1339184571}
+  player: {fileID: 0}
+  pointToTeleport: {fileID: 0}
+  toDesActivate: []
+  toActivate: []
 --- !u!1 &8635256274839387400
 GameObject:
   m_ObjectHideFlags: 0
