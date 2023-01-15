@@ -8,8 +8,11 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealt;
     [SerializeField] Rigidbody player;
     [SerializeField] PlayerController playerController;
+    AudioSource audioSource;
+    [SerializeField] AudioClip soundHurt,soundDie;
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Rigidbody>();
         currentHealt = maxHealt;
@@ -20,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
         playerController.GetComponent<PlayerController>().StopMoving();
         player.AddRelativeForce(Vector3.back * (5 / 2), ForceMode.Impulse);
         currentHealt -= healtToLoss;
+        audioSource.PlayOneShot(soundHurt);
         if (currentHealt <= 0)
             PlayerDie();
     }
@@ -33,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDie()
     {
+        audioSource.PlayOneShot(soundDie);
         playerController.DieAnimation();
         //gameObject.SetActive(false);
     }

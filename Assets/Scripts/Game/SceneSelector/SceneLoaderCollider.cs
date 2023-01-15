@@ -17,7 +17,7 @@ public class SceneLoaderCollider : MonoBehaviour
     [SerializeField] BoxCollider detector;
     [SerializeField] Transform player;
     [SerializeField] Transform pointToTeleport;
-    [SerializeField] GameObject toDesActivate;
+    [SerializeField] List<GameObject> toDesActivate,toActivate;
 
     private void Start()
     {
@@ -35,9 +35,26 @@ public class SceneLoaderCollider : MonoBehaviour
             else if(typeOfScene.Equals(TypeOfScene.insideScene))
             {
                 player.position = pointToTeleport.position;
-                toDesActivate.SetActive(false);
+                DeActivateObjects();
+                ActivateObjects();
             }
             sceneLoader.LoadScene(sceneName);
         }
-    }        
+    }
+
+
+    public void DeActivateObjects()
+    {
+        foreach (GameObject i in toDesActivate)
+        {
+            i.SetActive(false);
+        }
+    }
+    public void ActivateObjects()
+    {
+        foreach (GameObject i in toActivate)
+        {
+            i.SetActive(true);
+        }
+    }
 }

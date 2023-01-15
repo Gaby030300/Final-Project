@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     float turnAmount;
 
     public bool isDeath;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -84,12 +85,11 @@ public class PlayerController : MonoBehaviour
         {
             moveAnimator.Normalize();
         }
-
         Move(moveAnimator);
         Shooting();
         FollowMouseLook();
         ActivateZipLine();
-    }
+    }    
 
     public void Shooting()
     {

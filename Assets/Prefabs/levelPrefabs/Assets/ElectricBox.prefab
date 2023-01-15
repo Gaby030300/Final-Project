@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4843909106474789833}
   - component: {fileID: 2614852956918860747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ElectricBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 7713048991639170756}
   - component: {fileID: 8755294329833560380}
   - component: {fileID: 5678547765103335682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: caja_de_luz_high
   m_TagString: Untagged
   m_Icon: {fileID: 0}

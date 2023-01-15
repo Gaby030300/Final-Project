@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6749450631356825049}
   - component: {fileID: 4859586604245605020}
   - component: {fileID: 8052686304168880543}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6886747113253238129}
   - component: {fileID: 130609478810188994}
   - component: {fileID: 8482183464587073073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopeTanque10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1320201935142232968}
   - component: {fileID: 1726052846457402118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ACPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 1418072422804884140}
   - component: {fileID: 2067432287092152929}
   - component: {fileID: 453544635584030916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 716819206449519804}
   - component: {fileID: 1526936478218886378}
   - component: {fileID: 3908434479782221502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
