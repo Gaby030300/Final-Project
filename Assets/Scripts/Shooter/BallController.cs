@@ -38,5 +38,9 @@ public class BallController : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+        if (!other.CompareTag("Activator"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
