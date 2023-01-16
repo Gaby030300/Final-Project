@@ -827,7 +827,7 @@ PrefabInstance:
       objectReference: {fileID: 311507529}
     - target: {fileID: 8308208026172859227, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
@@ -21129,6 +21129,10 @@ PrefabInstance:
     - target: {fileID: 6133159845123281187, guid: 85d1129cdb23f4b419052cb222ca94b5, type: 3}
       propertyPath: m_Name
       value: Camera Holder
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133159845123281187, guid: 85d1129cdb23f4b419052cb222ca94b5, type: 3}
+      propertyPath: m_TagString
+      value: Audio
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85d1129cdb23f4b419052cb222ca94b5, type: 3}

@@ -33,5 +33,9 @@ public class UIController : MonoBehaviour
     {
         configurationPanel.SetActive(false);
         player.GetComponent<PlayerController>().enabled = true;        
+    }    
+    public void OnRestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
