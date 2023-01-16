@@ -3,7 +3,27 @@ guid: a2823841dc155664889636911f9ccf5e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MaskMaterial
+    second: {fileID: 2100000, guid: 99f73ff6d1faf084f87584de65cecbe8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piel
+    second: {fileID: 2100000, guid: 99f73ff6d1faf084f87584de65cecbe8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyesMaterial
+    second: {fileID: 2100000, guid: 99f73ff6d1faf084f87584de65cecbe8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 99f73ff6d1faf084f87584de65cecbe8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
