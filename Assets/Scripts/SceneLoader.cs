@@ -9,15 +9,15 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] OpenMechanismWires openMechanism;
     private void Awake()
     {
-        if(instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
+        //if (instance != null)
+        //{
+        //    Destroy(gameObject);
+        //}
+        //else
+        //{
             instance = this;
-            DontDestroyOnLoad(this);
-        }
+            //DontDestroyOnLoad(this);
+        //}
     }
 
     public void LoadScene(string sceneName)

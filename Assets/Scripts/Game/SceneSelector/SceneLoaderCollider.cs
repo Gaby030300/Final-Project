@@ -11,7 +11,7 @@ public enum TypeOfScene
 
 public class SceneLoaderCollider : MonoBehaviour
 {
-    SceneLoader sceneLoader;
+    [SerializeField] SceneLoader sceneLoader;
     [SerializeField] TypeOfScene typeOfScene;
     [SerializeField] string sceneName;
     [SerializeField] BoxCollider detector;

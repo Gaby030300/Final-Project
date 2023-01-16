@@ -68,7 +68,7 @@ public class WiretaskController : MonoBehaviour
                 if(successfulWires >= _rightWires.Count)
                 {
                     Debug.Log("Task Completed");
-                    sceneLoader.UnLoadScene("Assets/Scenes/Fix Wires 1");
+                    sceneLoader.UnLoadScene("Fix Wires 1");
                 }
                 else
                 {
