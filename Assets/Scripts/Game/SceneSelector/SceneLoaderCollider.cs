@@ -18,6 +18,7 @@ public class SceneLoaderCollider : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Transform pointToTeleport;
     [SerializeField] List<GameObject> toDesActivate,toActivate;
+    [SerializeField] OpenMechanismWires openMechanismWires;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class SceneLoaderCollider : MonoBehaviour
         {
             if(typeOfScene.Equals(TypeOfScene.puzzleScene))
             {
+                openMechanismWires.AllowToMove();
                 detector.enabled = false;                
             }
             else if(typeOfScene.Equals(TypeOfScene.insideScene))

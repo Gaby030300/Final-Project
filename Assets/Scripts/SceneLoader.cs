@@ -6,7 +6,6 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader instance;
     [SerializeField] List<GameObject> listToDesActivate;
-    [SerializeField] OpenMechanismWires openMechanism;
     private void Awake()
     {
         //if (instance != null)
@@ -28,10 +27,6 @@ public class SceneLoader : MonoBehaviour
 
     public void UnLoadScene(string sceneName)
     {
-        if (sceneName.Equals("Assets/Scenes/Fix Wires 1"))
-        {
-            openMechanism.AllowToMove();
-        }
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(sceneName));
         ActivateObjects();
     }
