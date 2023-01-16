@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] PlayerController playerController;
     AudioSource audioSource;
     [SerializeField] AudioClip soundHurt,soundDie;
+
+    [SerializeField] UnityEvent gameOverEvent;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -37,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDie()
     {
+        gameOverEvent.Invoke();
         audioSource.PlayOneShot(soundDie);
         playerController.DieAnimation();
         //gameObject.SetActive(false);

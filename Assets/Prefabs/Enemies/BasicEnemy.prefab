@@ -2470,7 +2470,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 1.01
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2505,7 +2505,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.58
+      value: 0.64
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2704,7 +2704,7 @@ MonoBehaviour:
   basicEnemyController: {fileID: 9204285275989328569}
   enemyHealth: {fileID: 9204285275989328570}
   player: {fileID: 0}
-  damage: 50
+  damage: 5
   canAttack: 0
   audioClip: {fileID: 8300000, guid: 4c09266a349903443b22c352fa1afc45, type: 3}
 --- !u!82 &1949047873
