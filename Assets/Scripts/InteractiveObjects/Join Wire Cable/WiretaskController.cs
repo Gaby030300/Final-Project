@@ -20,6 +20,7 @@ public class WiretaskController : MonoBehaviour
 
     SceneLoader sceneLoader;
 
+
     private void Start()
     {
         sceneLoader = SceneLoader.instance;

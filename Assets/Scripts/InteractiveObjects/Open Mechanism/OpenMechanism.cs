@@ -30,7 +30,7 @@ public class OpenMechanism : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && keyCount == maxKey)
         {
             keyCount--;
-            transform.DOMove(new Vector3(xPosition, yPosition, zPosition), 1);
+            transform.DOMove(new Vector3(xPosition, yPosition, zPosition), 1);            
         }
     }
 }
