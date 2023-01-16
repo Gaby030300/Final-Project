@@ -13,7 +13,7 @@ public class OpenMechanism : MonoBehaviour
     [SerializeField] float zPosition;
     private void Start()
     {
-        //DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
+        DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
     }
     private void OnCollisionEnter(Collision collision)
     {
