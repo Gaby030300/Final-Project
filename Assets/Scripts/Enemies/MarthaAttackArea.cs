@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieAttackArea : MonoBehaviour
+public class MarthaAttackArea : MonoBehaviour
 {
     [SerializeField] BasicEnemyController basicEnemyController;
-    [SerializeField] ZombieHealth enemyHealth;
+    [SerializeField] EnemyHealth enemyHealth;
     [SerializeField] PlayerHealth player;
     [SerializeField] int damage;
     public bool canAttack;
@@ -36,7 +36,7 @@ public class ZombieAttackArea : MonoBehaviour
     public void MakeDamage()
     {
         audioSource.PlayOneShot(audioClip);
-        if (canAttack)        
+        if (canAttack)
         {
             player.RestHealt(damage);
         }

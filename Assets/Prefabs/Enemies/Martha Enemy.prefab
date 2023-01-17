@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5886422833450841166}
   - component: {fileID: 5886422833450841165}
   - component: {fileID: 5886422833450841164}
+  - component: {fileID: 8912770266564140130}
   m_Layer: 0
   m_Name: Attack Area
   m_TagString: Untagged
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemyController: {fileID: 5886422833602715867}
-  enemyHealth: {fileID: 5886422833602715860}
+  enemyHealth: {fileID: 0}
   player: {fileID: 0}
   damage: 20
   canAttack: 0
@@ -64,6 +65,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5031207, y: 1.6158173, z: 2.6828775}
   m_Center: {x: -0.06216132, y: 0.815459, z: 0.84144044}
+--- !u!114 &8912770266564140130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5886422833450841167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4e728b4d808cc498e8d447a7a62254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicEnemyController: {fileID: 5886422833602715867}
+  enemyHealth: {fileID: 5886422833602715860}
+  player: {fileID: 0}
+  damage: 20
+  canAttack: 0
+  audioClip: {fileID: 8300000, guid: 4c09266a349903443b22c352fa1afc45, type: 3}
 --- !u!1 &5886422833602715869
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +237,8 @@ MonoBehaviour:
   player: {fileID: 0}
   anim: {fileID: 5886422833602715868}
   distance: 0
+  pathfinder: {fileID: 0}
+  pointsToPatroll: []
 --- !u!95 &5886422833602715868
 Animator:
   serializedVersion: 4
@@ -267,6 +288,7 @@ MonoBehaviour:
   maxHealt: 80
   capsuleCollider: {fileID: 5886422833602715866}
   isAlive: 0
+  canBeHurt: 0
   soundHurt: {fileID: 8300000, guid: f1f1f63d1c1185441a57f50fb95e2fc4, type: 3}
   soundDie: {fileID: 8300000, guid: f1f1f63d1c1185441a57f50fb95e2fc4, type: 3}
 --- !u!82 &5886422833174900505

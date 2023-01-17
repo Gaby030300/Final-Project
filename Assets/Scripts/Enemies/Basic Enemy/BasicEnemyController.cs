@@ -8,6 +8,9 @@ public class BasicEnemyController : MonoBehaviour
     [SerializeField] PlayerController player;
     [SerializeField] Animator anim;
     [SerializeField] float distance;
+    [SerializeField] GameObject pathfinder;
+
+    public List<Transform> pointsToPatroll;
 
     private void Start()
     {
@@ -17,7 +20,7 @@ public class BasicEnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (!player.isDeath)
+        if (!player.isDeath && pathfinder.activeInHierarchy)
         {
             distance = Vector3.Distance(transform.position, player.transform.position);
             anim.SetFloat("Distance", distance);

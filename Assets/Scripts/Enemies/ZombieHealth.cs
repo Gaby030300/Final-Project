@@ -5,25 +5,50 @@ using Pathfinding;
 
 public class ZombieHealth : MonoBehaviour
 {
-    [SerializeField] Collider capsuleCollider;
+    [SerializeField] List<Collider> listCollider;
     [SerializeField] List<MonoBehaviour> listToDesactivate;
     Animator anim;
     public bool isAlive;
 
     [SerializeField] AudioClip soundDie;
     AudioSource audioSource;
+
+    [SerializeField]private Rigidbody[] rigidbodies;
+    [SerializeField] List<Collider> colliders;
+
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        isAlive = true;
+        rigidbodies = transform.GetComponentsInChildren<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        SetEnabled(false);
+        isAlive = true;
+    }
+
+    void SetEnabled(bool enabled)
+    {
+        bool isKinematic = !enabled;
+        foreach (Rigidbody rigidbody in rigidbodies)
+        {
+            rigidbody.isKinematic = isKinematic;
+        }
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = enabled;
+        }
+
+        anim.enabled = !enabled;
     }
     public void EnemyDie()
     {
+        SetEnabled(true);
         isAlive = false;
-        capsuleCollider.enabled = false;
         audioSource.PlayOneShot(soundDie);
         anim.SetTrigger("Die");
+        foreach (Collider i in listCollider)
+        {
+            i.enabled = false;
+        }
         foreach (MonoBehaviour i in listToDesactivate)
         {
             i.enabled = false;
