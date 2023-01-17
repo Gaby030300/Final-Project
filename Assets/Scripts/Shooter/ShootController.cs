@@ -19,7 +19,7 @@ public class ShootController : MonoBehaviour
     [SerializeField] AudioClip soundEffect;
     AudioSource audioSource;
 
-
+    [SerializeField] ParticleSystem muzzle;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -42,6 +42,7 @@ public class ShootController : MonoBehaviour
     }
     public void Shoot()
     {
+        muzzle.Play();
         lastTimeShoot = Time.time;
         currentAmmunition--;
         GameObject ball = ballPool.GetObject();

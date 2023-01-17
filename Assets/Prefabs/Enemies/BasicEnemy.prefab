@@ -2254,11 +2254,11 @@ GameObject:
   - component: {fileID: 9204285275989328566}
   - component: {fileID: 9204285275989328575}
   - component: {fileID: 9204285275989328569}
-  - component: {fileID: 9204285275989328570}
   - component: {fileID: 9204285275989328571}
   - component: {fileID: 9204285275989328564}
   - component: {fileID: 9204285275989328565}
   - component: {fileID: 1678926913}
+  - component: {fileID: 6977556444344775037}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -2347,24 +2347,6 @@ MonoBehaviour:
   player: {fileID: 0}
   anim: {fileID: 9204285275989328575}
   distance: 0
---- !u!114 &9204285275989328570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8321905958123065209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fc9438c69c7c2042aa45e189b3774eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealt: 0
-  maxHealt: 40
-  capsuleCollider: {fileID: 9204285275989328568}
-  isAlive: 0
-  soundHurt: {fileID: 8300000, guid: 0fa5b34db33525842990e932e301a6a5, type: 3}
-  soundDie: {fileID: 8300000, guid: 8d6c63b54e51a204baf4005b7ba3f7b5, type: 3}
 --- !u!114 &9204285275989328571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2545,6 +2527,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6977556444344775037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8321905958123065209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b3e1f6537f5544a84825c5b193e52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capsuleCollider: {fileID: 9204285275989328568}
+  listToDesactivate:
+  - {fileID: 9204285275989328565}
+  - {fileID: 9204285275989328564}
+  - {fileID: 9204285275989328571}
+  - {fileID: 9204285275989328569}
+  isAlive: 0
+  soundDie: {fileID: 8300000, guid: 8d6c63b54e51a204baf4005b7ba3f7b5, type: 3}
 --- !u!1 &8791885270961576456
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemyController: {fileID: 9204285275989328569}
-  enemyHealth: {fileID: 9204285275989328570}
+  enemyHealth: {fileID: 0}
   player: {fileID: 0}
   damage: 5
   canAttack: 0

@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int maxHealt;
     [SerializeField] Collider capsuleCollider;
     Animator anim;
-    public bool isAlive;
+    public bool isAlive, canBeHurt;
 
     [SerializeField] AudioClip soundHurt, soundDie;
     AudioSource audioSource;
@@ -17,20 +17,21 @@ public class EnemyHealth : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         isAlive = true;
+        canBeHurt = true;
         anim = GetComponent<Animator>();
         currentHealt = maxHealt;
     }
 
     public void RestHealt(int healtToLoss)
     {
-        if (currentHealt > 0)
+        if (currentHealt > 0 && canBeHurt)
         {
             StartCoroutine(AnimationDamage());
             audioSource.PlayOneShot(soundHurt);
             currentHealt -= healtToLoss;
         }
         else
-        {
+        {            
             if (currentHealt <= 0)
                 EnemyDie();
         }
@@ -39,7 +40,8 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator AnimationDamage()
     {
         anim.SetBool("TakingDamage", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
+        canBeHurt = true;
         anim.SetBool("TakingDamage", false);
     }
 
@@ -56,5 +58,15 @@ public class EnemyHealth : MonoBehaviour
     public void TurnOffSound()
     {
         audioSource.volume = 0f;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ball") && canBeHurt)
+        {
+            Debug.Log("Herido");
+            RestHealt(5);
+            canBeHurt = false;
+        }
     }
 }

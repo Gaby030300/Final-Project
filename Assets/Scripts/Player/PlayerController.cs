@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     float turnAmount;
 
     public bool isDeath;
+    [SerializeField] float timeToDash;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -106,7 +107,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isDashing)
         {
-            rb.AddForce(focalPoint.transform.forward * dashVelocity, ForceMode.Impulse);
+            rb.AddForce(new Vector3(move.x,0,move.y) * dashVelocity, ForceMode.Impulse);
             isDashing = false;
             StartCoroutine(DashTime());
         }        
@@ -161,7 +162,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator DashTime() 
     {        
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(timeToDash);
         isDashing = true;
     }
 
