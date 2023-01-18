@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject laser;
 
+    private bool canShoot;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
     }
     void Awake()
     {
+        canShoot = true;
         shoot = GetComponent<ShootController>();
     }
     void Start()
@@ -96,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
     public void Shooting()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && canShoot)
         {
             if (shoot.CanShoot())
             {
@@ -166,11 +169,13 @@ public class PlayerController : MonoBehaviour
 
     public void ActivateLaser()
     {
+        canShoot = true;
         laser.SetActive(true);
     }
     
     public void DeactivateLaser()
-    {        
+    {
+        canShoot = false;
         laser.SetActive(false);
     }
 

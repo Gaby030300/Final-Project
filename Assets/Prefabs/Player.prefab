@@ -5482,6 +5482,7 @@ MonoBehaviour:
   animPlayer: {fileID: 1433961990777185156}
   isDeath: 0
   timeToDash: 1
+  laser: {fileID: 987953264}
 --- !u!114 &1832506717
 MonoBehaviour:
   m_ObjectHideFlags: 0

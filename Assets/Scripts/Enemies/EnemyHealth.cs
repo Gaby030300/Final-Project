@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator AnimationDamage()
     {
         anim.SetBool("TakingDamage", true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         canBeHurt = true;
         anim.SetBool("TakingDamage", false);
     }
