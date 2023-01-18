@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public GameObject optionsMenu;
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            optionsMenu.SetActive(true);
+        }
+    }
     public void OnMenuButton()
     {
         SceneManager.LoadScene("Menu");

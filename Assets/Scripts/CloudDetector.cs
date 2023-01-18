@@ -10,10 +10,22 @@ public class CloudDetector : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip soundDeath;
 
-    private void OnCollisionEnter(Collision collision)
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        dieEvent.Invoke();
+    //        PlaySound1();
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        dieEvent.Invoke();
-        PlaySound1();
+        if (other.CompareTag("Player"))
+        {
+            dieEvent.Invoke();
+            PlaySound1();
+        }
     }
 
     public void PlaySound1()
