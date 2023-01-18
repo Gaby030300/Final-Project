@@ -175,6 +175,24 @@ MonoBehaviour:
   sfxSounds:
   - name: Shoot
     clip: {fileID: 8300000, guid: 1c13a716c80039b4eb5b1d69ee697dfb, type: 3}
+  - name: Zombie Idle
+    clip: {fileID: 8300000, guid: bd4d1becf57d0e44eb45944f093031b9, type: 3}
+  - name: Zombie Hurt
+    clip: {fileID: 8300000, guid: 0fa5b34db33525842990e932e301a6a5, type: 3}
+  - name: Zombie Die
+    clip: {fileID: 8300000, guid: 8d6c63b54e51a204baf4005b7ba3f7b5, type: 3}
+  - name: Zombie Attack
+    clip: {fileID: 8300000, guid: 4c09266a349903443b22c352fa1afc45, type: 3}
+  - name: Walk
+    clip: {fileID: 8300000, guid: 99b02417cb94ebd43a50e787c7f25f81, type: 3}
+  - name: Hurt Player
+    clip: {fileID: 8300000, guid: ab46321f4062a88478ce3eeab07a3467, type: 3}
+  - name: Die Player
+    clip: {fileID: 8300000, guid: 0bfee73b1898b4948aa7af5909a042b8, type: 3}
+  - name: Damage Martha
+    clip: {fileID: 8300000, guid: f1f1f63d1c1185441a57f50fb95e2fc4, type: 3}
+  - name: Big Monster
+    clip: {fileID: 8300000, guid: 4eca830b35eb77145be8bb323f155d74, type: 3}
   musicSource: {fileID: 332446950}
   sfxSource: {fileID: 1190025351}
 --- !u!1 &127849341
@@ -684,7 +702,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0

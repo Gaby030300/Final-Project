@@ -9,13 +9,6 @@ public class MarthaAttackArea : MonoBehaviour
     [SerializeField] PlayerHealth player;
     [SerializeField] int damage;
     public bool canAttack;
-    AudioSource audioSource;
-    [SerializeField] AudioClip audioClip;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,7 +28,7 @@ public class MarthaAttackArea : MonoBehaviour
 
     public void MakeDamage()
     {
-        audioSource.PlayOneShot(audioClip);
+        SoundManager.instance.PlaySFX("Damage Martha");
         if (canAttack)
         {
             player.RestHealt(damage);

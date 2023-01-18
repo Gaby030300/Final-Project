@@ -43,7 +43,7 @@ public class ZombieHealth : MonoBehaviour
     {
         SetEnabled(true);
         isAlive = false;
-        audioSource.PlayOneShot(soundDie);
+        SoundManager.instance.PlaySFX("Zombie Die");
         anim.SetTrigger("Die");
         foreach (Collider i in listCollider)
         {

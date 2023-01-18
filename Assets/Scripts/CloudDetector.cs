@@ -7,9 +7,6 @@ public class CloudDetector : MonoBehaviour
 {
     [SerializeField] UnityEvent dieEvent;
 
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip soundDeath;
-
     //private void OnCollisionEnter(Collision collision)
     //{
     //    if (collision.gameObject.CompareTag("Player"))
@@ -30,6 +27,6 @@ public class CloudDetector : MonoBehaviour
 
     public void PlaySound1()
     {
-        audioSource.PlayOneShot(soundDeath);
+        SoundManager.instance.PlaySFX("Big Monster");
     }
 }

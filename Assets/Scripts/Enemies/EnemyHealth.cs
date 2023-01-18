@@ -11,11 +11,8 @@ public class EnemyHealth : MonoBehaviour
     Animator anim;
     public bool isAlive, canBeHurt;
 
-    [SerializeField] AudioClip soundHurt, soundDie;
-    AudioSource audioSource;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         isAlive = true;
         canBeHurt = true;
         anim = GetComponent<Animator>();
@@ -27,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealt > 0 && canBeHurt)
         {
             StartCoroutine(AnimationDamage());
-            audioSource.PlayOneShot(soundHurt);
+            SoundManager.instance.PlaySFX("Zombie Hurt");
             currentHealt -= healtToLoss;
         }
         else
@@ -49,15 +46,10 @@ public class EnemyHealth : MonoBehaviour
     {
         isAlive = false;
         capsuleCollider.enabled = false;
-        audioSource.PlayOneShot(soundDie);
+        SoundManager.instance.PlaySFX("Zombie Die");
         anim.SetTrigger("Die");
         Invoke("TurnOffSound",1f);
         //gameObject.SetActive(false);
-    }
-
-    public void TurnOffSound()
-    {
-        audioSource.volume = 0f;
     }
 
     private void OnTriggerEnter(Collider other)

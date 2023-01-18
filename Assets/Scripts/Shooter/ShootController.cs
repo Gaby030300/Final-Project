@@ -16,8 +16,6 @@ public class ShootController : MonoBehaviour
     private float lastTimeShoot;
     private bool isPlayer;
 
-    [SerializeField] AudioClip soundEffect;
-    AudioSource audioSource;
 
     [SerializeField] ParticleSystem muzzle;
     [SerializeField] float rayDistance;
@@ -26,7 +24,6 @@ public class ShootController : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         if (GetComponent<PlayerController>())
         {
             isPlayer = true;
@@ -64,8 +61,8 @@ public class ShootController : MonoBehaviour
         {
             Debug.Log(hit.collider.name);
         }
-        if (audioSource!=null)
-            audioSource.PlayOneShot(soundEffect);
+        SoundManager.instance.PlaySFX("Shoot");
+
     }
 
     private void Update()

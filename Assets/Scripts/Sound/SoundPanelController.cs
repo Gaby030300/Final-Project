@@ -11,8 +11,8 @@ public class SoundPanelController : MonoBehaviour
 
     private void Start()
     {
-        _musicSlider.value = PlayerPrefs.GetFloat("musicSave", _musicSlider.value);
-        _sfxSlider.value = PlayerPrefs.GetFloat("sfxSave", _sfxSlider.value);
+        _musicSlider.value = PlayerPrefs.GetFloat("musicSave", 1f);
+        _sfxSlider.value = PlayerPrefs.GetFloat("sfxSave", 1f);
     }
     private void Update()
     {

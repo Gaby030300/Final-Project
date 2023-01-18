@@ -9,13 +9,10 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealt;
     [SerializeField] Rigidbody player;
     [SerializeField] PlayerController playerController;
-    AudioSource audioSource;
-    [SerializeField] AudioClip soundHurt,soundDie;
 
     [SerializeField] UnityEvent gameOverEvent;
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Rigidbody>();
         currentHealt = maxHealt;
@@ -26,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         playerController.GetComponent<PlayerController>().StopMoving();
         player.AddRelativeForce(Vector3.back * (5 / 2), ForceMode.Impulse);
         currentHealt -= healtToLoss;
-        audioSource.PlayOneShot(soundHurt);
+        SoundManager.instance.PlaySFX("Hurt Player");
         if (currentHealt <= 0)
             PlayerDie();
     }
@@ -41,8 +38,7 @@ public class PlayerHealth : MonoBehaviour
     public void PlayerDie()
     {
         gameOverEvent.Invoke();
-        audioSource.PlayOneShot(soundDie);
+        SoundManager.instance.PlaySFX("Die Player");
         playerController.DieAnimation();
-        //gameObject.SetActive(false);
     }
 }
