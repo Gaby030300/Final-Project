@@ -2,30 +2,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using UnityEngine.Rendering;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    public AudioSource audioSource;
 
-    public Slider controlVolume;
+    public Sound[] musicSounds, sfxSounds;
+    public AudioSource musicSource, sfxSource;
 
-    public GameObject[] audios;
-
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audios = GameObject.FindGameObjectsWithTag("Audio");
-        controlVolume.value = PlayerPrefs.GetFloat("volumenSave", 1f);
+        PlayMusic("Main Theme");    
+    }
 
-    }
-    private void Update()
+    public void PlayMusic(string name)
     {
-        foreach (GameObject au in audios)
-            au.GetComponent<AudioSource>().volume = controlVolume.value;
+        Sound s = Array.Find(musicSounds, (x) => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+            musicSource.clip = s.clip;
+            musicSource.Play();
+        }
     }
-    public void SaveVolume()
+    public void PlaySFX(string name)
     {
-        PlayerPrefs.SetFloat("volumenSave", controlVolume.value);
+        Sound s = Array.Find(sfxSounds, (x) => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+
+        }
+    }
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+    public void ToggleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+    public void MusicVolume(float volume)
+    {
+        musicSource.volume = volume;        
+    }
+    public void SFXVolume(float volume)
+    {
+        sfxSource.volume = volume;   
     }
 }

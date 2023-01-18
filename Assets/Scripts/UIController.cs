@@ -16,24 +16,19 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        textBullet.text = "Bullets: "+shootController.currentAmmunition + " / " + shootController.maxAmmunition;
+        textBullet.text = shootController.currentAmmunition + " / " + shootController.maxAmmunition;
         healtBar.fillAmount = playerHealth.currentHealt/100;
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            configurationPanel.SetActive(true);
+        }
     }
     public void OnMenuButton()
     {
         SceneManager.LoadScene("Menu");
     }
-    public void OnConfigButton(GameObject player)
-    {
-        configurationPanel.SetActive(true);
-        player.GetComponent<PlayerController>().enabled = false;        
-    }
-
-    public void OnCloseButton(GameObject player)
-    {
-        configurationPanel.SetActive(false);
-        player.GetComponent<PlayerController>().enabled = true;        
-    }    
+   
     public void OnRestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

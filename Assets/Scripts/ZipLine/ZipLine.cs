@@ -47,7 +47,7 @@ public class ZipLine : MonoBehaviour
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<PlayerInput>().enabled = false;
         player.transform.parent = localZip.transform;
-        player.transform.position = localZip.transform.position + new Vector3(0,-2,0);
+        player.transform.position = localZip.transform.position + new Vector3(0,-3,0);
         isZipping = true;
     }
     private void ResetZipLine()
