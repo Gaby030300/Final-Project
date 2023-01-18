@@ -3548,7 +3548,7 @@ MonoBehaviour:
   basicEnemyController: {fileID: 9204285275989328569}
   enemyHealth: {fileID: 6977556444344775037}
   player: {fileID: 0}
-  damage: 5
+  damage: 20
   canAttack: 0
   audioClip: {fileID: 8300000, guid: 4c09266a349903443b22c352fa1afc45, type: 3}
 --- !u!82 &1949047873

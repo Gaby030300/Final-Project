@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     public bool isDeath;
     [SerializeField] float timeToDash;
 
+    [SerializeField] GameObject laser;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -145,6 +147,8 @@ public class PlayerController : MonoBehaviour
             {
                 if (hit.collider.tag == "Zipline")
                 {
+                    DeactivateLaser();
+                    animPlayer.SetBool("ZipLine",true);
                     hit.collider.GetComponent<ZipLine>().StartZipLine(gameObject);
                 }
             }
@@ -160,10 +164,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator DashTime() 
+    public void ActivateLaser()
+    {
+        laser.SetActive(true);
+    }
+    
+    public void DeactivateLaser()
     {        
+        laser.SetActive(false);
+    }
+
+
+    IEnumerator DashTime() 
+    {
+        DeactivateLaser();
+        animPlayer.SetBool("Rolling",true);
         yield return new WaitForSeconds(timeToDash);
         isDashing = true;
+        animPlayer.SetBool("Rolling",false);
+        ActivateLaser();
     }
 
     public void StopMoving()
@@ -173,11 +192,13 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator SpeedSlow()
     {
+        DeactivateLaser();
         animPlayer.SetBool("TakingDamage",true);
         speed /= 100;
         yield return new WaitForSeconds(1.5f);
         speed *= 100;
         animPlayer.SetBool("TakingDamage",false);
+        ActivateLaser();
     }
 
     void Move(Vector3 move)
