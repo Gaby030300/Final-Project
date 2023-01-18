@@ -793,6 +793,14 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8308208024813757558, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 390.8385
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308208024813757558, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 724.3557
+      objectReference: {fileID: 0}
     - target: {fileID: 8308208024813757559, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
       propertyPath: m_Maskable
       value: 0
@@ -913,6 +921,18 @@ PrefabInstance:
       propertyPath: configurationPanel
       value: 
       objectReference: {fileID: 63227194}
+    - target: {fileID: 8308208025375903744, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 517
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308208025375903744, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308208025375903745, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
+      propertyPath: m_text
+      value: 00/00
+      objectReference: {fileID: 0}
     - target: {fileID: 8308208025413405263, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
       propertyPath: m_Maskable
       value: 0
@@ -920,6 +940,10 @@ PrefabInstance:
     - target: {fileID: 8308208025413405263, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308208025614499588, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -117
       objectReference: {fileID: 0}
     - target: {fileID: 8308208025614499589, guid: 709e36126170fac4081f8c08d7fd02f0, type: 3}
       propertyPath: m_Maskable
