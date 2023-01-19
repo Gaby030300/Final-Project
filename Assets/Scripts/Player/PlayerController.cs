@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
     private bool canShoot, canMove, canAttackMelee;
 
+    FallDamage fallDamage;
+
     [SerializeField] GameObject AttackMelee;
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour
         canShoot = true;
         canAttackMelee = true;
         shoot = GetComponent<ShootController>();
+        fallDamage = GetComponent<FallDamage>();
     }
     void Start()
     {
@@ -97,12 +100,23 @@ public class PlayerController : MonoBehaviour
         Move(moveAnimator);
         if (canMove)
         {
-            FollowMouseLook();
-            ActivateZipLine();
-            Shooting();
             AttakingMelee();
+            FollowMouseLook();
+            Shooting();
+            ActivateZipLine();
+        }
+        if (rb.velocity.y < -15)
+        {
+            DeactivateLaser();
+            StartCoroutine(BackToFloor());
         }
     }    
+
+    IEnumerator BackToFloor()
+    {
+        yield return new WaitUntil(() => fallDamage.grounded);
+        ActivateLaser();
+    }
 
     public void Shooting()
     {
@@ -178,19 +192,20 @@ public class PlayerController : MonoBehaviour
     public void ActivateLaser()
     {
         canShoot = true;
+        canMove = true;
         laser.SetActive(true);
     }
     
     public void DeactivateLaser()
     {
         canShoot = false;
+        canMove = false;
         laser.SetActive(false);
     }
 
 
     IEnumerator DashTime() 
     {
-        canMove = false;
         DeactivateLaser();
         animPlayer.SetBool("Rolling",true);
         yield return new WaitForSeconds(timeToDash);
@@ -198,7 +213,6 @@ public class PlayerController : MonoBehaviour
         animPlayer.SetBool("Rolling", false);
         ActivateLaser();
         yield return new WaitForSeconds(0.1f);
-        canMove = true;
         rb.velocity = Vector3.zero;
     }
 
@@ -251,18 +265,22 @@ public class PlayerController : MonoBehaviour
 
     public void AttakingMelee()
     {        
-        if (Input.GetButton("Fire2") && canAttackMelee)
+        if (Input.GetButtonDown("Fire2") && canAttackMelee)
         {
-            canAttackMelee = false;
             StartCoroutine(StopAttackingMelee());
         }
     }
 
     IEnumerator StopAttackingMelee()
     {
+        DeactivateLaser();
+        canAttackMelee = false;
+        animPlayer.SetBool("Attacking", true);
         AttackMelee.SetActive(true);
         yield return new WaitForSeconds(timeToAttackMelee);
         AttackMelee.SetActive(false);
+        animPlayer.SetBool("Attacking", false);
         canAttackMelee = true;
+        ActivateLaser();
     }
 }

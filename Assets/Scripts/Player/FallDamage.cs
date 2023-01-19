@@ -7,12 +7,13 @@ public class FallDamage : MonoBehaviour
 {
     public float minimumFall;
 
-    [SerializeField] bool grounded = false;
+    public bool grounded = false;
     Rigidbody rb;
     [SerializeField] bool wasGrounded;
     [SerializeField] bool wasFalling;
     float startOfFall;
     PlayerHealth health;
+    [SerializeField] Animator anim;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class FallDamage : MonoBehaviour
 
         wasGrounded = grounded;
         wasFalling = isFalling;
+        anim.SetFloat("Falling", rb.velocity.y);
     }
 
 
