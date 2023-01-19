@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 22
+  controlID: 20
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 85
+  controlID: 89
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -572,9 +572,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -90.31541, y: -48.684906, z: -1.0618591}
+    m_Target: {x: -228.9676, y: 6.677911, z: -84.570885}
     speed: 2
-    m_Value: {x: -90.31541, y: -48.684906, z: -1.0618591}
+    m_Value: {x: -228.9676, y: 6.677911, z: -84.570885}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -613,7 +613,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -621,13 +621,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.23657838, y: -0.014404847, z: 0.0014509989, w: -0.97291124}
+    m_Target: {x: -0.07338745, y: 0.032990612, z: -0.00628243, w: -0.99818826}
     speed: 2
-    m_Value: {x: -0.23479787, y: -0.014387357, z: 0.0014273212, w: -0.9719367}
+    m_Value: {x: -0.07329084, y: 0.03144783, z: -0.006163432, w: -0.99679565}
   m_Size:
-    m_Target: 92.631386
+    m_Target: 84.54936
     speed: 2
-    m_Value: 92.631386
+    m_Value: 80.90848
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -645,7 +645,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: 0.054924134, y: -0.119307585, z: 0.0086466875, w: 0.99273235}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -2438,10 +2438,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 236}
-      m_SelectedIDs: c6f6ffff
-      m_LastClickedID: -2362
-      m_ExpandedIDs: a8f6ffffc6f6ffff7ef8ffff30fbffff
+      scrollPos: {x: 0, y: 1040}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 5eabfeff82f4feff84f4fefffc23ffff0024ffffd02dffffaa8bffffae8bffff98e9ffff9ce9ffff30fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2506,22 +2506,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials/Textures/BuildingsTextures/Building5Texture
+    - Assets/Materials/Textures/BuildingsTextures/Building2Texture 1/WindowsBuilding2Texture
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Materials/Textures/BuildingsTextures/Building5Texture
+  - Assets/Materials/Textures/BuildingsTextures/Building2Texture 1/WindowsBuilding2Texture
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Sebastian\Documents\GitHub\Final-Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 431}
-    m_SelectedIDs: ea7a0000
-    m_LastClickedID: 31466
-    m_ExpandedIDs: 0000000066750000687500006a7500006c7500006e750000447800004a78000096780000cc7a000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 9a7b0000
+    m_LastClickedID: 31642
+    m_ExpandedIDs: 0000000066750000687500006a7500006c7500006e7500003c78000044780000947800000879000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2580,18 +2580,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000d88000009a5f0000b2af02005296000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: BuildingsMeshes
+      m_OriginalName: BuildingsMeshes
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 30788
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
