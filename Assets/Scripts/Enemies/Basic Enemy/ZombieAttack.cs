@@ -8,7 +8,8 @@ public class ZombieAttack : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.transform.GetChild(1).GetComponent<ZombieAttackArea>().MakeDamage();
+        animator.transform.GetChild(1).GetComponent<ZombieAttackArea>()?.MakeDamage();
+        animator.transform.GetChild(1).GetComponent<MarthaAttackArea>()?.MakeDamage();
         animator.SetBool("Attacking", false);
     }
 

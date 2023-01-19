@@ -17,9 +17,19 @@ public class ZombieFollow : StateMachineBehaviour
         ai = animator.GetComponent<AIPath>();
         destinationSetter.target = player;
         ai.canMove = true;
-        if(animator.transform.GetChild(1).GetComponent<ZombieAttackArea>().canAttack == true)
+        if (animator.transform.GetChild(1).GetComponent<ZombieAttackArea>())
         {
-            animator.SetBool("Attacking", true);
+            if(animator.transform.GetChild(1).GetComponent<ZombieAttackArea>().canAttack == true)
+            {
+                animator.SetBool("Attacking", true);
+            }
+        }
+        else if (animator.transform.GetChild(1).GetComponent<MarthaAttackArea>())
+        {
+            if(animator.transform.GetChild(1).GetComponent<MarthaAttackArea>().canAttack == true)
+            {
+                animator.SetBool("Attacking", true);
+            }            
         }
     }
 
