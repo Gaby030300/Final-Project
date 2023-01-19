@@ -8,7 +8,7 @@ public class ZombieHealth : MonoBehaviour
     [SerializeField] List<Collider> listCollider;
     [SerializeField] List<MonoBehaviour> listToDesactivate;
     Animator anim;
-    public bool isAlive;
+    public bool isAlive, isTakingDamage;
 
     [SerializeField] AudioClip soundDie;
     AudioSource audioSource;
@@ -16,8 +16,12 @@ public class ZombieHealth : MonoBehaviour
     [SerializeField]private Rigidbody[] rigidbodies;
     [SerializeField] List<Collider> colliders;
 
+    [SerializeField] int hitsToDie;
+    public int hitsMelee;
+
     private void Start()
     {
+        hitsMelee = 0;
         rigidbodies = transform.GetComponentsInChildren<Rigidbody>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -54,7 +58,6 @@ public class ZombieHealth : MonoBehaviour
             i.enabled = false;
         }
         Invoke("TurnOffSound", 1f);
-        //gameObject.SetActive(false);
     }
 
     public void TurnOffSound()
@@ -62,13 +65,28 @@ public class ZombieHealth : MonoBehaviour
         audioSource.volume = 0f;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void TakeMeleeDamage()
     {
-        if (other.CompareTag("Ball") && isAlive)
+        if (!isTakingDamage)
         {
-            EnemyDie();
-            anim.SetTrigger("Die");
-            isAlive = false;
+            hitsMelee++;
+            isTakingDamage = true;
+            if (hitsMelee >= hitsToDie)
+            {
+                EnemyDie();
+            }
+            else
+            {
+                StartCoroutine(StopTakingDamage());
+            }
         }
+    }
+
+    IEnumerator StopTakingDamage()
+    {
+        anim.SetBool("TakingDamage",true);
+        yield return new WaitForSeconds(1);
+        anim.SetBool("TakingDamage",false);
+        isTakingDamage = false;
     }
 }

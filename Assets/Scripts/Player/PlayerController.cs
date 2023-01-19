@@ -32,13 +32,13 @@ public class PlayerController : MonoBehaviour
     float turnAmount;
 
     public bool isDeath;
-    [SerializeField] float timeToDash;
+    [SerializeField] float timeToDash, timeToAttackMelee;
 
     [SerializeField] GameObject laser;
 
-    private bool canShoot, canMove;
+    private bool canShoot, canMove, canAttackMelee;
 
-
+    [SerializeField] GameObject AttackMelee;
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -47,16 +47,18 @@ public class PlayerController : MonoBehaviour
     {
         mouseLook = context.ReadValue<Vector2>();
     }
+
     void Awake()
     {
+        canMove = true;
         canShoot = true;
+        canAttackMelee = true;
         shoot = GetComponent<ShootController>();
     }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("_Outpoint");
-        canMove = true;
         cam = Camera.main.transform;
     }
 
@@ -93,12 +95,13 @@ public class PlayerController : MonoBehaviour
             moveAnimator.Normalize();
         }
         Move(moveAnimator);
-        Shooting();
         if (canMove)
         {
             FollowMouseLook();
+            ActivateZipLine();
+            Shooting();
+            AttakingMelee();
         }
-        ActivateZipLine();
     }    
 
     public void Shooting()
@@ -194,6 +197,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         animPlayer.SetBool("Rolling", false);
         ActivateLaser();
+        yield return new WaitForSeconds(0.1f);
         canMove = true;
         rb.velocity = Vector3.zero;
     }
@@ -245,8 +249,20 @@ public class PlayerController : MonoBehaviour
         animPlayer.SetBool("IsDeath", isDeath);
     }
 
-    public void AttackMelee()
-    {
+    public void AttakingMelee()
+    {        
+        if (Input.GetButton("Fire2") && canAttackMelee)
+        {
+            canAttackMelee = false;
+            StartCoroutine(StopAttackingMelee());
+        }
+    }
 
+    IEnumerator StopAttackingMelee()
+    {
+        AttackMelee.SetActive(true);
+        yield return new WaitForSeconds(timeToAttackMelee);
+        AttackMelee.SetActive(false);
+        canAttackMelee = true;
     }
 }
