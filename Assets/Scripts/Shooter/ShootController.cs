@@ -21,7 +21,7 @@ public class ShootController : MonoBehaviour
     [SerializeField] float rayDistance;
     [SerializeField] LineRenderer laser;
 
-
+    RaycastHit hit;
     private void Awake()
     {
         if (GetComponent<PlayerController>())
@@ -49,17 +49,22 @@ public class ShootController : MonoBehaviour
 
     public void Shoot()
     {
+        //GameObject ball = ballPool.GetObject();
+        //ball.transform.position = outPoint.position;
+        //ball.transform.rotation = outPoint.rotation;
+        //ball.GetComponent<Rigidbody>().velocity = outPoint.forward * ballVelocity;
         muzzle.Play();
         lastTimeShoot = Time.time;
         currentAmmunition--;
-        GameObject ball = ballPool.GetObject();
-        ball.transform.position = outPoint.position;
-        ball.transform.rotation = outPoint.rotation;
-        ball.GetComponent<Rigidbody>().velocity = outPoint.forward * ballVelocity;
-        RaycastHit hit;
-        if (Physics.Raycast(outPoint.position, outPoint.forward, out hit, rayDistance))
+        if(hit.collider != null)
         {
-            Debug.Log(hit.collider.name);
+            if (hit.transform.GetComponent<ZombieHealth>() != null )
+            {
+                hit.transform.GetComponent<ZombieHealth>().EnemyDie();
+            }else if (hit.transform.GetComponent<EnemyHealth>() != null)
+            {
+                hit.transform.GetComponent<EnemyHealth>().RestHealt(5);
+            }
         }
         SoundManager.instance.PlaySFX("Shoot");
 
@@ -72,7 +77,7 @@ public class ShootController : MonoBehaviour
 
     public void ShootLaser()
     {
-        RaycastHit hit;
+        
         if (Physics.Raycast(outPoint.position, outPoint.forward, out hit, rayDistance))
         {
             laser.SetPosition(0,outPoint.position);
@@ -96,6 +101,4 @@ public class ShootController : MonoBehaviour
         currentAmmunition += amountToAdd;
         currentAmmunition = currentAmmunition > maxAmmunition ? maxAmmunition : currentAmmunition;
     }
-
-    
 }

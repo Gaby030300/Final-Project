@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject laser;
 
-    private bool canShoot;
+    private bool canShoot, canMove;
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -53,9 +54,9 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-       rb = GetComponent<Rigidbody>();
-       focalPoint = GameObject.Find("_Outpoint");
-
+        rb = GetComponent<Rigidbody>();
+        focalPoint = GameObject.Find("_Outpoint");
+        canMove = true;
         cam = Camera.main.transform;
     }
 
@@ -93,7 +94,10 @@ public class PlayerController : MonoBehaviour
         }
         Move(moveAnimator);
         Shooting();
-        FollowMouseLook();
+        if (canMove)
+        {
+            FollowMouseLook();
+        }
         ActivateZipLine();
     }    
 
@@ -112,7 +116,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isDashing)
         {
-            rb.AddForce(new Vector3(move.x,0,move.y) * dashVelocity, ForceMode.Impulse);
+
+            rb.AddForce(transform.forward * dashVelocity, ForceMode.Impulse);
             isDashing = false;
             StartCoroutine(DashTime());
         }        
@@ -182,12 +187,15 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator DashTime() 
     {
+        canMove = false;
         DeactivateLaser();
         animPlayer.SetBool("Rolling",true);
         yield return new WaitForSeconds(timeToDash);
         isDashing = true;
-        animPlayer.SetBool("Rolling",false);
+        animPlayer.SetBool("Rolling", false);
         ActivateLaser();
+        canMove = true;
+        rb.velocity = Vector3.zero;
     }
 
     public void StopMoving()
@@ -235,5 +243,10 @@ public class PlayerController : MonoBehaviour
     {
         isDeath = true;
         animPlayer.SetBool("IsDeath", isDeath);
+    }
+
+    public void AttackMelee()
+    {
+
     }
 }

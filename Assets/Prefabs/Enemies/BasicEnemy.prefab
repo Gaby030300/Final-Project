@@ -3050,8 +3050,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.3174953, y: 4.785301, z: 3.3671536}
-  m_Center: {x: -0.029171944, y: 2.3713608, z: 0.26364255}
+  m_Size: {x: 1.9906359, y: 4.785301, z: 2.054019}
+  m_Center: {x: 0.012917995, y: 2.3713608, z: 0.40245295}
 --- !u!95 &9204285275989328575
 Animator:
   serializedVersion: 4
@@ -3550,7 +3550,6 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 20
   canAttack: 0
-  audioClip: {fileID: 8300000, guid: 4c09266a349903443b22c352fa1afc45, type: 3}
 --- !u!82 &1949047873
 AudioSource:
   m_ObjectHideFlags: 0

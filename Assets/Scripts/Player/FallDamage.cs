@@ -5,50 +5,52 @@ using UnityEngine.Events;
 
 public class FallDamage : MonoBehaviour
 {
-    //Rigidbody rb;
+    public float minimumFall;
 
-    //[SerializeField] float speedToHurt;
-    //[SerializeField] UnityEvent playerDie;
-    //[SerializeField] CapsuleCollider collider;
-    //[SerializeField] float speedBeforeLanding;
+    [SerializeField] bool grounded = false;
+    Rigidbody rb;
+    [SerializeField] bool wasGrounded;
+    [SerializeField] bool wasFalling;
+    float startOfFall;
+    PlayerHealth health;
 
-    //private void Start()
+    private void Start()
+    {
+        health = GetComponent<PlayerHealth>();
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
+    {
+        CheckGround();
+
+        if (!wasFalling && isFalling) startOfFall = transform.position.y;
+        if (!wasGrounded && grounded) TakeDamage();
+
+        wasGrounded = grounded;
+        wasFalling = isFalling;
+    }
+
+
+
+    public void CheckGround()
+    {
+        grounded = Physics.Raycast(transform.position,-Vector3.up, 0.5f);
+    }
+
+    //IEnumerator Shake(float duration)
     //{
-    //    rb = GetComponent<Rigidbody>();
-    //}
-
-    //public bool IsGround()
-    //{
-    //    RaycastHit[] hit;
-    //    hit = Physics.CapsuleCastAll(collider.bounds.center, collider.bounds.size, 0, Vector3.down, .1f);
-    //    return hit!=null;
 
     //}
+    bool isFalling { get { return (!grounded && rb.velocity.y < 0); } }
 
-    //private void Update()
-    //{
-    //    if (!IsGround())
-    //    {
-    //        speedBeforeLanding = rb.velocity.y;
-    //    }
-    //    else
-    //    {
-    //        if (speedBeforeLanding < speedToHurt)
-    //        {
+    public void TakeDamage()
+    {
+        float fallDistance = startOfFall - transform.position.y;
+        if (fallDistance > minimumFall)
+        {
+            health.RestHealt((int) fallDistance);
+        }
+    }
 
-    //            playerDie.Invoke();
-    //        }
-    //    }
-    //}
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log(rb.velocity.y);
-    //    Debug.Log("Colision");
-    //    if (rb.velocity.y < speedToHurt)
-    //    {
-    //        Debug.Log("Colision dura");
-
-    //    }
-    //}
 }

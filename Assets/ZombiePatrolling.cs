@@ -28,7 +28,6 @@ public class ZombiePatrolling : StateMachineBehaviour
     {
         if((pointsOfPatrolling[index].transform.position - animator.transform.position).magnitude < 1f)
         {
-            Debug.Log("llego");
             animator.SetBool("Patrolling",false);
             destinationSetter.target = pointsOfPatrolling[index].transform;
             ai.canMove = true;
