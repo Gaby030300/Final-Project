@@ -11,18 +11,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 move, mouseLook;
     private Vector3 rotationTarget;
     Rigidbody rb;
-    private ShootController shoot;
     [SerializeField]LayerMask layer;
-
     [SerializeField] private float checkOffset = 1f;
     [SerializeField] private float checkRadious = 2f;
-
-    
     private GameObject focalPoint;
-    [SerializeField] private float dashVelocity = 10.0f;
-    private bool isDashing = true;
-
-    [SerializeField] Animator animPlayer;
+    public Animator animPlayer;
     Transform cam;
     Vector3 camForward;
     Vector3 moveAnimator;
@@ -32,15 +25,14 @@ public class PlayerController : MonoBehaviour
     float turnAmount;
 
     public bool isDeath;
-    [SerializeField] float timeToDash, timeToAttackMelee;
+    
 
     [SerializeField] GameObject laser;
 
-    private bool canShoot, canMove, canAttackMelee, interacting;
+    public bool canMove;
 
     FallDamage fallDamage;
 
-    [SerializeField] GameObject AttackMelee;
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -53,9 +45,6 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         canMove = true;
-        canShoot = true;
-        canAttackMelee = true;
-        shoot = GetComponent<ShootController>();
         fallDamage = GetComponent<FallDamage>();
     }
     void Start()
@@ -65,22 +54,27 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main.transform;
     }
 
-    private void Update()
-    {
-        Dash();
-    }
+    //void FixedUpdate()
+    //{
+    //    if (!isDeath)
+    //    {
+    //        Movement();
+    //        if (canMove)
+    //        {
+    //            FollowMouseLook();
+    //            ActivateZipLine();
+    //        }
+    //    }
+    //}
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (!isDeath)
         {
             Movement();
             if (canMove)
             {
-                CheckInteracting();
-                AttakingMelee();
                 FollowMouseLook();
-                Shooting();
                 ActivateZipLine();
             }
         }
@@ -119,27 +113,6 @@ public class PlayerController : MonoBehaviour
         ActivateLaser();
     }
 
-    public void Shooting()
-    {
-        if (Input.GetButton("Fire1") && canShoot)
-        {
-            if (shoot.CanShoot())
-            {
-                shoot.Shoot();
-            }
-        }
-    }
-
-    private void Dash()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isDashing)
-        {
-
-            rb.AddForce(transform.forward * dashVelocity, ForceMode.Impulse);
-            isDashing = false;
-            StartCoroutine(DashTime());
-        }        
-    }
     public void MovePlayerWithAim()
     {
         var lookPos = rotationTarget - transform.position;
@@ -190,39 +163,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Interactable") && interacting)
-        {
-            other.GetComponent<Activator>().ActivateEvent();
-        }
-    }
+    
 
     public void ActivateLaser()
     {
-        canShoot = true;
         canMove = true;
         laser.SetActive(true);
     }
     
     public void DeactivateLaser()
     {
-        canShoot = false;
         canMove = false;
         laser.SetActive(false);
-    }
-
-
-    IEnumerator DashTime() 
-    {
-        DeactivateLaser();
-        animPlayer.SetBool("Rolling",true);
-        yield return new WaitForSeconds(timeToDash);
-        isDashing = true;
-        animPlayer.SetBool("Rolling", false);
-        ActivateLaser();
-        yield return new WaitForSeconds(0.1f);
-        rb.velocity = Vector3.zero;
     }
 
     public void StopMoving()
@@ -271,40 +223,4 @@ public class PlayerController : MonoBehaviour
         isDeath = true;
         animPlayer.SetBool("IsDeath", isDeath);
     }
-
-    public void AttakingMelee()
-    {        
-        if (Input.GetButtonDown("Fire2") && canAttackMelee)
-        {
-            StartCoroutine(StopAttackingMelee());
-        }
-    }
-
-    IEnumerator StopAttackingMelee()
-    {
-        DeactivateLaser();
-        canAttackMelee = false;
-        animPlayer.SetBool("Attacking", true);
-        AttackMelee.SetActive(true);
-        yield return new WaitForSeconds(timeToAttackMelee);
-        AttackMelee.SetActive(false);
-        animPlayer.SetBool("Attacking", false);
-        canAttackMelee = true;
-        ActivateLaser();
-    }
-
-    public void CheckInteracting()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            interacting = true;
-        }
-
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            interacting = false;
-        }
-    }
-
-    
 }
