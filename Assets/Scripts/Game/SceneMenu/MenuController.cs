@@ -11,8 +11,12 @@ public class MenuController : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            optionsMenu.SetActive(true);
+            optionsMenu.SetActive(true);            
         }
+    }
+    public void OnIntroButton()
+    {
+        SceneManager.LoadScene("Introduction");
     }
     public void OnMenuButton()
     {
@@ -25,6 +29,10 @@ public class MenuController : MonoBehaviour
     public void OnCreditsButton()
     {
         SceneManager.LoadScene("Credits");
+    }
+    public void OnOptionsButton()
+    {
+        optionsMenu.SetActive(true);
     }
     public void OnExitButton()
     {

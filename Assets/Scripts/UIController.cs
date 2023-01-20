@@ -16,13 +16,19 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        textBullet.text = shootController.currentAmmunition + " / " + shootController.maxAmmunition;
+        textBullet.text = shootController.currentAmmunition + "/" + shootController.maxAmmunition;
         healtBar.fillAmount = playerHealth.currentHealt/100;
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             configurationPanel.SetActive(true);
+            Time.timeScale = 0;
         }
+    }
+    public void OnCloseButton()
+    {
+        configurationPanel.SetActive(false);
+        Time.timeScale = 1;
     }
     public void OnMenuButton()
     {
