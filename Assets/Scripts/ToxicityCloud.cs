@@ -8,11 +8,13 @@ public class ToxicityCloud : MonoBehaviour
     float currentTime, currentTimeLife;
     bool canAttack;
 
-    private void Start()
+    [SerializeField] int damage;
+
+    private void OnEnable()
     {
         canAttack = true;
         currentTime = 0;
-        currentTimeLife = lifeTime;
+        currentTimeLife = lifeTime;        
     }
 
     private void Update()
@@ -31,7 +33,7 @@ public class ToxicityCloud : MonoBehaviour
         if (other.CompareTag("Player") && canAttack)
         {
             canAttack = false;
-            other.GetComponent<PlayerHealth>().RestHealt(20);
+            other.GetComponent<PlayerHealth>().RestHealt(damage);
             StartCoroutine(CanAttackAgain());
         }
     }

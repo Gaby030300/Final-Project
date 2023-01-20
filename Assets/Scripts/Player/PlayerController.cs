@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject laser;
 
-    private bool canShoot, canMove, canAttackMelee;
+    private bool canShoot, canMove, canAttackMelee, interacting;
 
     FallDamage fallDamage;
 
@@ -75,6 +75,14 @@ public class PlayerController : MonoBehaviour
         if (!isDeath)
         {
             Movement();
+            if (canMove)
+            {
+                CheckInteracting();
+                AttakingMelee();
+                FollowMouseLook();
+                Shooting();
+                ActivateZipLine();
+            }
         }
     }
 
@@ -97,15 +105,8 @@ public class PlayerController : MonoBehaviour
         {
             moveAnimator.Normalize();
         }
-        Move(moveAnimator);
-        if (canMove)
-        {
-            AttakingMelee();
-            FollowMouseLook();
-            Shooting();
-            ActivateZipLine();
-        }
-        if (rb.velocity.y < -15)
+        Move(moveAnimator);        
+        if (rb.velocity.y < -2)
         {
             DeactivateLaser();
             StartCoroutine(BackToFloor());
@@ -170,7 +171,7 @@ public class PlayerController : MonoBehaviour
             RaycastHit[] hits = Physics.SphereCastAll(transform.position + new Vector3(0, checkOffset, 0), checkRadious, Vector3.up);
             foreach (RaycastHit hit in hits)
             {
-                if (hit.collider.tag == "Zipline")
+                if (hit.collider.CompareTag("Zipline"))
                 {
                     DeactivateLaser();
                     animPlayer.SetBool("ZipLine",true);
@@ -181,11 +182,19 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Key"))
+        if (other.CompareTag("Key"))
         {
             OpenMechanism.keyCount++;
             Destroy(other.gameObject);
             Debug.Log(OpenMechanism.keyCount);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Interactable") && interacting)
+        {
+            other.GetComponent<Activator>().ActivateEvent();
         }
     }
 
@@ -283,4 +292,19 @@ public class PlayerController : MonoBehaviour
         canAttackMelee = true;
         ActivateLaser();
     }
+
+    public void CheckInteracting()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            interacting = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            interacting = false;
+        }
+    }
+
+    
 }
