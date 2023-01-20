@@ -47,14 +47,15 @@ public class ZipLine : MonoBehaviour
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<PlayerInput>().enabled = false;
         player.transform.parent = localZip.transform;
-        player.transform.position = localZip.transform.position + new Vector3(0,-2,0);
+        player.transform.position = localZip.transform.position + new Vector3(0,-5,0);
         isZipping = true;
     }
     private void ResetZipLine()
     {
         if (!isZipping) return;
-
         GameObject player = localZip.transform.GetChild(0).gameObject;
+        player.transform.GetChild(3).GetComponent<Animator>().SetBool("ZipLine",false);
+        player.GetComponent<PlayerController>().ActivateLaser();
         player.GetComponent<Rigidbody>().useGravity = true;
         player.GetComponent<Rigidbody>().isKinematic = false;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
