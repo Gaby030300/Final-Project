@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEditor.Build;
 
 public class UIController : MonoBehaviour
 {
@@ -19,10 +20,18 @@ public class UIController : MonoBehaviour
         textBullet.text = shootController.currentAmmunition + "/" + shootController.maxAmmunition;
         healtBar.fillAmount = playerHealth.currentHealt/100;
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            configurationPanel.SetActive(true);
-            Time.timeScale = 0;
+            configurationPanel.SetActive(!configurationPanel.gameObject.activeSelf);
+            if(configurationPanel.gameObject.activeSelf == true)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+            
         }
     }
     public void OnCloseButton()
