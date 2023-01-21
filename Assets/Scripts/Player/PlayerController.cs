@@ -6,7 +6,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
-{    
+{
+    public static PlayerController instance;
+
     public float speed;
     private Vector2 move, mouseLook;
     private Vector3 rotationTarget;
@@ -44,6 +46,18 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
+
         canMove = true;
         fallDamage = GetComponent<FallDamage>();
     }
@@ -51,7 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("_Outpoint");
-        cam = Camera.main.transform;
+        cam = Camera.main.transform;        
     }
 
     void FixedUpdate()

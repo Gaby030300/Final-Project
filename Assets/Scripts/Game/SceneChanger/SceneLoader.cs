@@ -6,6 +6,7 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader instance;
     [SerializeField] List<GameObject> listToDesActivate;
+    [SerializeField] List<GameObject> listOfPlayer;
     private void Awake()
     {
         if (instance != null)
@@ -21,12 +22,24 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        if (sceneName.Equals("Fix Wires 1"))
+        {
+            DeActivateObjectsP();
+        }
         DeActivateObjects();
         SceneManager.LoadSceneAsync(sceneName,LoadSceneMode.Additive);
     }
 
     public void UnLoadScene(string sceneName)
     {
+        if (sceneName.Equals("InteriorScene1FInal"))
+        {
+            GameObject.FindObjectOfType<SceneLoaderCollider>().ActivateObjects();
+        }
+        if (sceneName.Equals("Fix Wires 1"))
+        {
+            ActivateObjectsP();
+        }
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(sceneName));
         ActivateObjects();
     }
@@ -41,6 +54,20 @@ public class SceneLoader : MonoBehaviour
     public void ActivateObjects()
     {
         foreach (GameObject i in listToDesActivate)
+        {
+            i.SetActive(true);
+        }
+    }
+    public void DeActivateObjectsP()
+    {
+        foreach (GameObject i in listOfPlayer)
+        {
+            i.SetActive(false);
+        }
+    }
+    public void ActivateObjectsP()
+    {
+        foreach (GameObject i in listOfPlayer)
         {
             i.SetActive(true);
         }
