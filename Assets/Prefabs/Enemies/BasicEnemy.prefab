@@ -3035,10 +3035,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.30955714
+  m_Radius: 0.74379003
   m_Height: 4.770914
   m_Direction: 1
-  m_Center: {x: 0.043375194, y: 2.4234133, z: -0.029407382}
+  m_Center: {x: 0.043375194, y: 2.4234133, z: 0.19714892}
 --- !u!65 &9204285275989328566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3296,6 +3296,7 @@ MonoBehaviour:
   - {fileID: 9204285275989328571}
   - {fileID: 9204285275989328569}
   isAlive: 0
+  isTakingDamage: 0
   soundDie: {fileID: 8300000, guid: 8d6c63b54e51a204baf4005b7ba3f7b5, type: 3}
   rigidbodies: []
   colliders:
@@ -3311,6 +3312,7 @@ MonoBehaviour:
   - {fileID: 1076352260}
   - {fileID: 413215141}
   hitsToDie: 2
+  hitsMelee: 0
 --- !u!1 &8791885270961576456
 GameObject:
   m_ObjectHideFlags: 0

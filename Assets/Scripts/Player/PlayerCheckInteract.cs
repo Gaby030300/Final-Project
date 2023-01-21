@@ -14,7 +14,7 @@ public class PlayerCheckInteract : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(player.canMove)
+        if (player.canMove)
             CheckInteracting();
     }
 

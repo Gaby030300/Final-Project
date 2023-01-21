@@ -19,7 +19,6 @@ public class SceneLoaderCollider : MonoBehaviour
     [SerializeField] Transform pointToTeleport;
     [SerializeField] List<GameObject> toDesActivate,toActivate;
     [SerializeField] OpenMechanismWires openMechanismWires;
-
     private void Start()
     {
         sceneLoader = SceneLoader.instance;

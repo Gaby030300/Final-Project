@@ -54,20 +54,7 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main.transform;
     }
 
-    //void FixedUpdate()
-    //{
-    //    if (!isDeath)
-    //    {
-    //        Movement();
-    //        if (canMove)
-    //        {
-    //            FollowMouseLook();
-    //            ActivateZipLine();
-    //        }
-    //    }
-    //}
-
-    void LateUpdate()
+    void FixedUpdate()
     {
         if (!isDeath)
         {
@@ -79,6 +66,19 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    //void LateUpdate()
+    //{
+    //    if (!isDeath)
+    //    {
+    //        Movement();
+    //        if (canMove)
+    //        {
+    //            FollowMouseLook();
+    //            ActivateZipLine();
+    //        }
+    //    }
+    //}
 
     private void Movement()
     {
