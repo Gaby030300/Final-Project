@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 30
+  controlID: 108
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -572,9 +572,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 126.3121, y: -453.17896, z: 77.374664}
+    m_Target: {x: 30.617455, y: 4.2580357, z: -18.947819}
     speed: 2
-    m_Value: {x: 126.3121, y: -453.17896, z: 77.374664}
+    m_Value: {x: 30.617455, y: 4.2580357, z: -18.947819}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -613,7 +613,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -621,13 +621,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.19954856, y: -0.032517243, z: 0.006910416, w: 0.97940636}
+    m_Target: {x: -0.012102741, y: 0.97328126, z: -0.22428146, w: -0.051151726}
     speed: 2
-    m_Value: {x: 0.19952185, y: -0.033983573, z: 0.007209149, w: 0.97927743}
+    m_Value: {x: -0.012177322, y: 0.9727776, z: -0.22570258, w: -0.051124796}
   m_Size:
-    m_Target: 0.4405483
+    m_Target: 6.221657
     speed: 2
-    m_Value: 0.4613071
+    m_Value: 6.221657
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2438,10 +2438,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a86efeff
-      m_LastClickedID: -102744
-      m_ExpandedIDs: ce75feffd075feff84a4feffb61cffff5027ffffae2cffffba2cffffbc2cfffff64bffff444dffff4a98ffff26deffff28e4fffff0edffff30fbffff
+      scrollPos: {x: 0, y: 32}
+      m_SelectedIDs: e0db0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6cfffdffbebefeff28f9feff6614ffff5239ffff6c73ffff2ee6ffff30fbffff52be0000e0c4000074c70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2506,22 +2506,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Imports/RoofTop_SafeHouse
+    - Assets/Materials/Textures/AssetsTextures/NoteBook
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Imports/RoofTop_SafeHouse
+  - Assets/Materials/Textures/AssetsTextures/NoteBook
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Sebastian\Documents\GitHub\Final-Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 9cae0000
-    m_LastClickedID: 44700
-    m_ExpandedIDs: 0000000046850000488500004a8500004c8500004e85000064880000668800007088000082880000c0880000c28800009cae0000a6ae0000b0ae0000d6c4000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 269}
+    m_SelectedIDs: e0db0000
+    m_LastClickedID: 56288
+    m_ExpandedIDs: 00000000ee820000f0820000f2820000f4820000f68200008a8600008c86000090860000e486000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2549,7 +2549,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000046850000488500004a8500004c8500004e850000
+    m_ExpandedIDs: 00000000ee820000f0820000f2820000f4820000f6820000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2580,18 +2580,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000d88000009a5f0000b2af02005296000000000000aac4000016c50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: NoteBook
+      m_OriginalName: NoteBook
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 56308
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
