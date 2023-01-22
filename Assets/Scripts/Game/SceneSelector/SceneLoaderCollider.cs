@@ -19,9 +19,9 @@ public class SceneLoaderCollider : MonoBehaviour
     [SerializeField] Transform pointToTeleport;
     [SerializeField] List<GameObject> toDesActivate,toActivate;
     [SerializeField] OpenMechanismWires openMechanismWires;
-
     private void Start()
     {
+        
         sceneLoader = SceneLoader.instance;
     }
 
@@ -36,10 +36,10 @@ public class SceneLoaderCollider : MonoBehaviour
             }
             else if(typeOfScene.Equals(TypeOfScene.insideScene))
             {
-                player.position = pointToTeleport.position;
                 DeActivateObjects();
                 ActivateObjects();
             }
+            other.gameObject.SetActive(false);
             sceneLoader.LoadScene(sceneName);
         }
     }
@@ -54,6 +54,7 @@ public class SceneLoaderCollider : MonoBehaviour
     }
     public void ActivateObjects()
     {
+        player.position = pointToTeleport.position;
         foreach (GameObject i in toActivate)
         {
             i.SetActive(true);

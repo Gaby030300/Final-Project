@@ -17,6 +17,8 @@ public class ZipLine : MonoBehaviour
     private bool isZipping = false;
     private GameObject localZip;
 
+    [SerializeField] GameObject instructions;
+
     private void Awake()
     {
         cable.SetPosition(0, ZipTransform.position);
@@ -54,7 +56,8 @@ public class ZipLine : MonoBehaviour
     {
         if (!isZipping) return;
         GameObject player = localZip.transform.GetChild(0).gameObject;
-        player.transform.GetChild(3).GetComponent<Animator>().SetBool("ZipLine",false);
+        player.transform.GetChild(2
+            ).GetComponent<Animator>().SetBool("ZipLine",false);
         player.GetComponent<PlayerController>().ActivateLaser();
         player.GetComponent<Rigidbody>().useGravity = true;
         player.GetComponent<Rigidbody>().isKinematic = false;
@@ -64,5 +67,17 @@ public class ZipLine : MonoBehaviour
         Destroy(localZip);
         localZip = null;
         isZipping = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            instructions.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            instructions.SetActive(false);        
     }
 }
