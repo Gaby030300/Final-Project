@@ -9,7 +9,7 @@ public class SoundPanelController : MonoBehaviour
 
     public Slider _musicSlider, _sfxSlider;
 
-    private void Start()
+    private void Awake()
     {
         _musicSlider.value = PlayerPrefs.GetFloat("musicSave", 1f);
         _sfxSlider.value = PlayerPrefs.GetFloat("sfxSave", 1f);
@@ -18,6 +18,7 @@ public class SoundPanelController : MonoBehaviour
     {
         MusicVolume();
         SFXVolume();
+        SaveVolume();
     }
 
     public void OnMenuButton()
@@ -41,7 +42,6 @@ public class SoundPanelController : MonoBehaviour
     public void MusicVolume()
     {
         SoundManager.instance.MusicVolume(_musicSlider.value);
-        PlayerPrefs.SetFloat("musicSave", _musicSlider.value);
     }
     public void SFXVolume()
     {

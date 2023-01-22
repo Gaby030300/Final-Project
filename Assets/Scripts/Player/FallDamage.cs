@@ -30,6 +30,7 @@ public class FallDamage : MonoBehaviour
 
         wasGrounded = grounded;
         wasFalling = isFalling;
+        anim.SetBool("Grounded", grounded);
         anim.SetFloat("Falling", rb.velocity.y);
     }
 
