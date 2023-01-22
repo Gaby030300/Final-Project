@@ -9,9 +9,9 @@ public class MenuController : MonoBehaviour
     public GameObject optionsMenu;
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            optionsMenu.SetActive(true);            
+            optionsMenu.SetActive(!optionsMenu.gameObject.activeSelf);
         }
     }
     public void OnIntroButton()
