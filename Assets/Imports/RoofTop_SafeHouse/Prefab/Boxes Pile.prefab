@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 211558440060238301}
   - component: {fileID: 6051741456353347508}
   - component: {fileID: 8951398069170161429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.00006, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2486759257451933124}
   m_RootOrder: 0
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -93,7 +95,7 @@ GameObject:
   - component: {fileID: 2486759257451933124}
   - component: {fileID: 5266987642930612714}
   - component: {fileID: 3641010020063663307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flare_Boxes (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,6 +112,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.90094453, z: -0, w: 0.43393442}
   m_LocalPosition: {x: 104.918, y: 5.109, z: 91.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 211558440060238301}
   m_Father: {fileID: 737088631176065672}
@@ -134,6 +137,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -176,7 +180,7 @@ GameObject:
   - component: {fileID: 5717802521732101403}
   - component: {fileID: 2691408578496331537}
   - component: {fileID: 2942526354779773005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,6 +197,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.00006, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 699397459723706308}
   m_RootOrder: 0
@@ -216,6 +221,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -258,7 +264,7 @@ GameObject:
   - component: {fileID: 5992017473063361532}
   - component: {fileID: 6539532918791980238}
   - component: {fileID: 4700442571075067837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flare_Boxes (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,6 +281,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.6677532, z: -0, w: 0.74438274}
   m_LocalPosition: {x: 105.022896, y: 5.3656, z: 91.688934}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 737088631176065672}
   m_RootOrder: 3
@@ -298,6 +305,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -338,7 +346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 737088631176065672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boxes Pile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +362,8 @@ Transform:
   m_GameObject: {fileID: 7529453739244555469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 637467347547097779}
   - {fileID: 2037515635655753005}
@@ -382,7 +391,7 @@ GameObject:
   - component: {fileID: 699397459723706308}
   - component: {fileID: 5735346697295779491}
   - component: {fileID: 3679284666776437299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flare_Boxes (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,6 +408,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.6677532, z: -0, w: 0.74438274}
   m_LocalPosition: {x: 105.022896, y: 5.235, z: 91.688934}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5717802521732101403}
   m_Father: {fileID: 737088631176065672}
@@ -423,6 +433,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

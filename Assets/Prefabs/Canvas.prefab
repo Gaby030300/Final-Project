@@ -1269,14 +1269,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2138382522, guid: 5acb27b603af6d44ea6113c4b7b15385, type: 3}
+  m_Sprite: {fileID: 21300040, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1407,7 +1407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   shootController: {fileID: 0}
-  textBullet: {fileID: 0}
+  textBullet: {fileID: 2280698575264062866}
   healtBar: {fileID: 2679510722535741551}
   configurationPanel: {fileID: 1440817275495266941}
 --- !u!1 &8308208026172859227
@@ -2107,15 +2107,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5901889422334457218, guid: de1fc1529acfd09449f5389a240009b3, type: 3}
       propertyPath: m_Color.b
-      value: 0.6320754
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5901889422334457218, guid: de1fc1529acfd09449f5389a240009b3, type: 3}
       propertyPath: m_Color.g
-      value: 0.6320754
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5901889422334457218, guid: de1fc1529acfd09449f5389a240009b3, type: 3}
       propertyPath: m_Color.r
-      value: 0.6320754
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7623076163440694306, guid: de1fc1529acfd09449f5389a240009b3, type: 3}
       propertyPath: m_Type
