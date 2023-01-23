@@ -101,4 +101,9 @@ public class ShootController : MonoBehaviour
         currentAmmunition += amountToAdd;
         currentAmmunition = currentAmmunition > maxAmmunition ? maxAmmunition : currentAmmunition;
     }
+
+    public void PlayerReset()
+    {
+        currentAmmunition = maxAmmunition;
+    }
 }

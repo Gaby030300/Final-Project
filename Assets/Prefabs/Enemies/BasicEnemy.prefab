@@ -3050,8 +3050,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9906359, y: 4.785301, z: 2.054019}
-  m_Center: {x: 0.012917995, y: 2.3713608, z: 0.40245295}
+  m_Size: {x: 1.9906359, y: 4.785301, z: 1.6906805}
+  m_Center: {x: 0.012917995, y: 2.3713608, z: 0.22078371}
 --- !u!95 &9204285275989328575
 Animator:
   serializedVersion: 4
@@ -3094,6 +3094,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &9204285275989328571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3107,7 +3114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.8
+  radius: 1.3
   height: 5
   canMove: 0
   maxSpeed: 8
@@ -3534,8 +3541,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7668095, y: 4.9381084, z: 1.8381464}
-  m_Center: {x: 0.007798195, y: 2.4951334, z: 0.419073}
+  m_Size: {x: 2.80404, y: 1.6388578, z: 3.8802717}
+  m_Center: {x: -0.019349575, y: 0.8455081, z: 1.4210626}
 --- !u!114 &9204285275317039895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3551,7 +3558,7 @@ MonoBehaviour:
   basicEnemyController: {fileID: 9204285275989328569}
   enemyHealth: {fileID: 6977556444344775037}
   player: {fileID: 0}
-  damage: 20
+  damage: 10
   canAttack: 0
 --- !u!82 &1949047873
 AudioSource:

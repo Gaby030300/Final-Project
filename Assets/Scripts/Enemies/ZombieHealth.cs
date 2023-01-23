@@ -17,7 +17,7 @@ public class ZombieHealth : MonoBehaviour
     [SerializeField] List<Collider> colliders;
 
     [SerializeField] int hitsToDie;
-    public int hitsMelee;
+    public int hitsMelee;    
 
     private void Start()
     {
@@ -77,6 +77,7 @@ public class ZombieHealth : MonoBehaviour
             }
             else
             {
+                SoundManager.instance.PlaySFX("Zombie Hurt");
                 StartCoroutine(StopTakingDamage());
             }
         }

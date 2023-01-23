@@ -42,7 +42,11 @@ public class ZombieFollow : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        destinationSetter.target = null;
+        if (animator.GetFloat("Distance") > 40)
+        {
+            destinationSetter.target = null;
+            ai.canMove = false;
+        }
         ai.canMove = false;
     }
 

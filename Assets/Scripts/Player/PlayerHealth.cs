@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public void RestHealt(int healtToLoss)
     {
         playerController.GetComponent<PlayerController>().StopMoving();
-        player.AddRelativeForce(Vector3.back * (5 / 2), ForceMode.Impulse);
+        player.AddRelativeForce(Vector3.back * (1), ForceMode.Impulse);
         currentHealt -= healtToLoss;
         SoundManager.instance.PlaySFX("Hurt Player");
         if (currentHealt <= 0)
@@ -40,5 +40,14 @@ public class PlayerHealth : MonoBehaviour
         gameOverEvent.Invoke();
         SoundManager.instance.PlaySFX("Die Player");
         playerController.DieAnimation();
+        playerController.canMove = false;
+        playerController.isDeath = true;
+    }
+
+    public void PlayerRevive()
+    {
+        playerController.canMove = true;
+        playerController.isDeath = false;
+        currentHealt = maxHealt;
     }
 }

@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
         else
         {
@@ -137,9 +137,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.15f);
         }        
-        Vector3 movement = new Vector3(move.x, 0f, move.y);
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);        
-
+        Vector3 movement = new Vector3(move.x, 0f, move.y) * speed;
+        rb.velocity = movement;
     }
     public void FollowMouseLook()
     {
@@ -171,6 +170,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Key"))
         {
+            SoundManager.instance.PlaySFX("Card");
             OpenMechanism.keyCount++;
             Destroy(other.gameObject);
             Debug.Log(OpenMechanism.keyCount);
@@ -236,5 +236,11 @@ public class PlayerController : MonoBehaviour
     {
         isDeath = true;
         animPlayer.SetBool("IsDeath", isDeath);
+    }
+
+    public void ReviveAnimation()
+    {
+        isDeath = false;
+        animPlayer.SetTrigger("Revive");
     }
 }

@@ -37,6 +37,7 @@ public class ActivateNote : MonoBehaviour
     public void ActiveNote()
     {
         note.SetActive(!note.gameObject.activeSelf);
+        SoundManager.instance.PlaySFX("Paper");
         if (note.gameObject.activeSelf == true)
         {
             Time.timeScale = 0;

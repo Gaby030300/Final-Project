@@ -385,6 +385,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f1f1f63d1c1185441a57f50fb95e2fc4, type: 3}
   - name: Big Monster
     clip: {fileID: 8300000, guid: 4eca830b35eb77145be8bb323f155d74, type: 3}
+  - name: RechargeGun
+    clip: {fileID: 8300000, guid: fcfcf37cf9a9ea049ae3fc70f794b9b8, type: 3}
+  - name: Paper
+    clip: {fileID: 8300000, guid: 95713deb654998e4e9e20d51b3d8694e, type: 3}
+  - name: Medikit
+    clip: {fileID: 8300000, guid: e744616409ae2f64ca742e8e68db37f1, type: 3}
+  - name: Card
+    clip: {fileID: 8300000, guid: 71db03b442736444b98700a19064ad8f, type: 3}
   musicSource: {fileID: 332446950}
   sfxSource: {fileID: 1190025351}
 --- !u!1 &127849341
@@ -1437,7 +1445,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 233, y: 14}
-  m_SizeDelta: {x: 479.2385, y: 161.0323}
+  m_SizeDelta: {x: 261.26, y: 93.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550299550
 MonoBehaviour:
@@ -1490,7 +1498,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1570,8 +1578,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218, y: -232}
-  m_SizeDelta: {x: 479.2385, y: 161.0323}
+  m_AnchoredPosition: {x: 218, y: -241.3}
+  m_SizeDelta: {x: 381.7, y: 115.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &724918559
 MonoBehaviour:
@@ -3094,7 +3102,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 233, y: -100}
-  m_SizeDelta: {x: 479.2385, y: 161.0323}
+  m_SizeDelta: {x: 422.4, y: 121}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2026612539
 MonoBehaviour:
@@ -3368,7 +3376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3373077871527324661, guid: 77c9dc66c41a1c840a2568d930319813, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c9dc66c41a1c840a2568d930319813, type: 3}

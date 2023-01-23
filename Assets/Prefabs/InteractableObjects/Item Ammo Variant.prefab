@@ -129,12 +129,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8794265014075807221, guid: 5896899e13aa16a449d687f7540ea941, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8763733
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794265014075807221, guid: 5896899e13aa16a449d687f7540ea941, type: 3}
       propertyPath: m_Size.y
       value: 1.0258197
       objectReference: {fileID: 0}
     - target: {fileID: 8794265014075807221, guid: 5896899e13aa16a449d687f7540ea941, type: 3}
       propertyPath: m_Size.z
       value: 3.982164
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794265014075807221, guid: 5896899e13aa16a449d687f7540ea941, type: 3}
+      propertyPath: m_Center.x
+      value: 0.15309143
       objectReference: {fileID: 0}
     - target: {fileID: 8794265014075807221, guid: 5896899e13aa16a449d687f7540ea941, type: 3}
       propertyPath: m_Center.y
@@ -146,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8794265014075807222, guid: 5896899e13aa16a449d687f7540ea941, type: 3}
       propertyPath: m_Name
-      value: Item Ammo
+      value: Item Ammo Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8794265014075807222, guid: 5896899e13aa16a449d687f7540ea941, type: 3}
       propertyPath: m_IsActive

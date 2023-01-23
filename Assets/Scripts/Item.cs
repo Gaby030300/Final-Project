@@ -23,8 +23,9 @@ public class Item : MonoBehaviour
                 playerHealth = other.GetComponent<PlayerHealth>();
                 if(playerHealth.currentHealt < playerHealth.maxHealt)
                 {
-                    playerHealth.AddHealt(amountToAdd);                    
-                    Destroy(gameObject);
+                    SoundManager.instance.PlaySFX("Medikit");
+                    playerHealth.AddHealt(amountToAdd);                                        
+                    gameObject.SetActive(false);
                 }
             }
             else
@@ -32,8 +33,9 @@ public class Item : MonoBehaviour
                 shootController = other.GetComponent<ShootController>();
                 if (shootController.currentAmmunition < shootController.maxAmmunition)
                 {
+                    SoundManager.instance.PlaySFX("RechargeGun");
                     shootController.AddAmmo(amountToAdd);
-                    Destroy(gameObject);
+                    gameObject.SetActive(false);
                 }
             }
         }

@@ -48,28 +48,32 @@ public class SceneLoader : MonoBehaviour
     {
         foreach (GameObject i in listToDesActivate)
         {
-            i.SetActive(false);
+            if(i!=null)
+                i.SetActive(false);
         }
     }
     public void ActivateObjects()
     {
         foreach (GameObject i in listToDesActivate)
         {
-            i.SetActive(true);
+            if (i != null)
+                i.SetActive(true);
         }
     }
     public void DeActivateObjectsP()
     {
         foreach (GameObject i in listOfPlayer)
         {
-            i.SetActive(false);
+            if (i != null)
+                i.SetActive(false);
         }
     }
     public void ActivateObjectsP()
     {
         foreach (GameObject i in listOfPlayer)
         {
-            i.SetActive(true);
+            if (i != null)
+                i.SetActive(true);
         }
     }
 }
