@@ -48,7 +48,7 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4
+  - screenRelativeHeight: 0.08486263
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 1152074704646625032}
@@ -68,7 +68,6 @@ GameObject:
   - component: {fileID: 4470911104647915601}
   - component: {fileID: 7840310150285981717}
   - component: {fileID: 3751733072807830331}
-  - component: {fileID: 6892037785400306362}
   m_Layer: 0
   m_Name: Creeper Ivy_LOD1_Var1_rmyxk
   m_TagString: Untagged
@@ -141,20 +140,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6892037785400306362
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4985169636079098679}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4077792138553879345, guid: d002af67ea8dd8b40b949197ed0a2064, type: 3}
 --- !u!1 &8555836761318978024
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +151,6 @@ GameObject:
   - component: {fileID: 164774214502057684}
   - component: {fileID: 1592538140007857480}
   - component: {fileID: 1152074704646625032}
-  - component: {fileID: 3854659314550541617}
   m_Layer: 0
   m_Name: Creeper Ivy_LOD0_Var1_rmyxk
   m_TagString: Untagged
@@ -239,17 +223,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3854659314550541617
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8555836761318978024}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4679483319741073503, guid: 44b2061f54081cd44916de21e7d14055, type: 3}

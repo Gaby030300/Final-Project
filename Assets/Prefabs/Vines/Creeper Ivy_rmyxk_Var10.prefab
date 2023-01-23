@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4056450374193579933}
   - component: {fileID: 1668587920503027137}
   - component: {fileID: 8848546142718093778}
-  - component: {fileID: 544753329775967589}
   m_Layer: 0
   m_Name: Creeper Ivy_LOD0_Var10_rmyxk
   m_TagString: Untagged
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &544753329775967589
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3780164394307597865}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7155199811258453145, guid: 6e313f5a4053de746b49cc61542522d4, type: 3}
 --- !u!1 &6965069608778146042
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +94,6 @@ GameObject:
   - component: {fileID: 8720345464170246211}
   - component: {fileID: 8511166156846362979}
   - component: {fileID: 5355210667687729655}
-  - component: {fileID: 3222711160296815880}
   m_Layer: 0
   m_Name: Creeper Ivy_LOD1_Var10_rmyxk
   m_TagString: Untagged
@@ -182,20 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3222711160296815880
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6965069608778146042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1016507415511714854, guid: b14f912f3f467664cbd6e014c2f2c26f, type: 3}
 --- !u!1 &8099573882363526658
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +192,7 @@ Transform:
   m_GameObject: {fileID: 8099573882363526658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 43.300003, y: 4.67301, z: -6.8188}
-  m_LocalScale: {x: 11.675978, y: 11.675978, z: 11.675978}
+  m_LocalScale: {x: 0.7436602, y: 0.7436596, z: 0.7436597}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4056450374193579933}
@@ -244,7 +214,7 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4
+  - screenRelativeHeight: 0.08761006
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8848546142718093778}

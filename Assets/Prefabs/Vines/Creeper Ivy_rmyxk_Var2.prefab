@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 415692789170888999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 67.5, y: 4.15467, z: -6.8188}
-  m_LocalScale: {x: 11.675978, y: 11.675978, z: 11.675978}
+  m_LocalScale: {x: 0.95814043, y: 1.7827162, z: 0.95814043}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3143412896672563327}
@@ -48,7 +48,7 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4
+  - screenRelativeHeight: 0.07687994
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 514096307375572954}
@@ -68,7 +68,6 @@ GameObject:
   - component: {fileID: 2170339379733004798}
   - component: {fileID: 3012756286285236696}
   - component: {fileID: 5092004030916088013}
-  - component: {fileID: 3596815018581471736}
   m_Layer: 0
   m_Name: Creeper Ivy_LOD1_Var2_rmyxk
   m_TagString: Untagged
@@ -141,20 +140,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3596815018581471736
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390598570606605515}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4839387543681688281, guid: aa1aa7f53fefc114ebfc7889d0630eea, type: 3}
 --- !u!1 &5230254634512083743
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +151,6 @@ GameObject:
   - component: {fileID: 3143412896672563327}
   - component: {fileID: 467876620490002730}
   - component: {fileID: 514096307375572954}
-  - component: {fileID: 3522330720842318000}
   m_Layer: 0
   m_Name: Creeper Ivy_LOD0_Var2_rmyxk
   m_TagString: Untagged
@@ -239,17 +223,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3522330720842318000
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5230254634512083743}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4616357564001849063, guid: 21440cbbd55d3a54b8cb64fd86466264, type: 3}
