@@ -32,9 +32,9 @@ public class SceneLoader : MonoBehaviour
 
     public void UnLoadScene(string sceneName)
     {
-        if (sceneName.Equals("InteriorScene1FInal"))
+        if (sceneName.Contains("InteriorScene"))
         {
-            GameObject.FindObjectOfType<SceneLoaderCollider>().ActivateObjects();
+            GameObject.FindGameObjectWithTag("InsideLevelCharger").GetComponent<SceneLoaderCollider>().ActivateObjects();
         }
         if (sceneName.Equals("Fix Wires 1"))
         {
