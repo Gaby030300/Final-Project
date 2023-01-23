@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum TypeOfScene
 {
@@ -21,7 +22,6 @@ public class SceneLoaderCollider : MonoBehaviour
     [SerializeField] OpenMechanismWires openMechanismWires;
     private void Start()
     {
-        
         sceneLoader = SceneLoader.instance;
     }
 
