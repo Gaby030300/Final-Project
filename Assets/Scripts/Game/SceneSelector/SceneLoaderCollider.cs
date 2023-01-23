@@ -37,7 +37,7 @@ public class SceneLoaderCollider : MonoBehaviour
             else if(typeOfScene.Equals(TypeOfScene.insideScene))
             {
                 DeActivateObjects();
-                ActivateObjects();
+                //ActivateObjects();
             }
             other.gameObject.SetActive(false);
             sceneLoader.LoadScene(sceneName);

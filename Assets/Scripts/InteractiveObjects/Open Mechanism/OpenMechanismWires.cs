@@ -9,7 +9,6 @@ public class OpenMechanismWires : MonoBehaviour
     [SerializeField] float xPosition;
     [SerializeField] float yPosition;
     [SerializeField] float zPosition;
-    [SerializeField] GameObject light;
     public bool canMove;
 
     private void Start()
@@ -27,7 +26,6 @@ public class OpenMechanismWires : MonoBehaviour
 
     public void AllowToMove()
     {
-        light.SetActive(true);
         canMove = true;
     }
 }

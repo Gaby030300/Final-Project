@@ -17,7 +17,7 @@ public class ZombiePatrolling : StateMachineBehaviour
         destinationSetter = animator.GetComponent<AIDestinationSetter>();
         ai = animator.GetComponent<AIPath>();
         pointsOfPatrolling = animator.GetComponent<BasicEnemyController>().pointsToPatroll;
-        index = Random.Range(1,6);
+        index = Random.Range(1, pointsOfPatrolling.Count);
         index -= 1;
         destinationSetter.target = pointsOfPatrolling[index].transform;
         ai.canMove = true;
