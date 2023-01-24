@@ -23,9 +23,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealt > 0 && canBeHurt)
         {
-            StartCoroutine(AnimationDamage());
-            SoundManager.instance.PlaySFX("Zombie Hurt");
-            currentHealt -= healtToLoss;
+            StartCoroutine(AnimationDamage(healtToLoss));
         }
         else
         {            
@@ -34,10 +32,12 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    IEnumerator AnimationDamage()
+    IEnumerator AnimationDamage(int healToloss)
     {
+        SoundManager.instance.PlaySFX("Zombie Hurt");
+        currentHealt -= healToloss;
         anim.SetBool("TakingDamage", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         canBeHurt = true;
         anim.SetBool("TakingDamage", false);
     }
@@ -52,13 +52,13 @@ public class EnemyHealth : MonoBehaviour
         //gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ball") && canBeHurt)
-        {
-            Debug.Log("Herido");
-            RestHealt(5);
-            canBeHurt = false;
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Ball") && canBeHurt)
+    //    {
+    //        Debug.Log("Herido");
+    //        RestHealt(5);
+    //        canBeHurt = false;
+    //    }
+    //}
 }

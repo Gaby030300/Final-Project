@@ -751,8 +751,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.011917, y: 1.6799376, z: 3.512193}
-  m_Center: {x: -0.08190346, y: 0.7711545, z: -0.0023971796}
+  m_Size: {x: 3.011917, y: 1.6799376, z: 3.4797308}
+  m_Center: {x: -0.08190346, y: 0.7711545, z: -0.01862824}
 --- !u!114 &1316170292130785940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,8 +801,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9042923, y: 3.0697343, z: 4.510433}
-  m_Center: {x: -0.16581999, y: 1.5154129, z: 0.09681118}
+  m_Size: {x: 3.9042923, y: 3.0697343, z: 3.8013153}
+  m_Center: {x: -0.16582, y: 1.5154129, z: 0.031806946}
 --- !u!114 &1316170292130785937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,8 +820,6 @@ MonoBehaviour:
   capsuleCollider: {fileID: 1316170292130785941}
   isAlive: 0
   canBeHurt: 0
-  soundHurt: {fileID: 8300000, guid: f1f1f63d1c1185441a57f50fb95e2fc4, type: 3}
-  soundDie: {fileID: 8300000, guid: f1f1f63d1c1185441a57f50fb95e2fc4, type: 3}
 --- !u!82 &1316170292130785936
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1179,8 +1177,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7180674, y: 1.6158173, z: 2.510467}
-  m_Center: {x: -0.110636584, y: 0.81550443, z: 0.7552531}
+  m_Size: {x: 2.6179757, y: 1.6158173, z: 3.2895684}
+  m_Center: {x: -0.108890474, y: 0.8155191, z: 1.1448202}
 --- !u!114 &6974274317911755276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1198,7 +1196,6 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 40
   canAttack: 0
-  audioClip: {fileID: 8300000, guid: 4c09266a349903443b22c352fa1afc45, type: 3}
 --- !u!82 &7837395016019755521
 AudioSource:
   m_ObjectHideFlags: 0

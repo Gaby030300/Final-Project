@@ -19,14 +19,14 @@ public class PlayerDash : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if (player.canMove)
-        //    Dash();
-        if (Input.GetKeyDown(KeyCode.Space) && isDashing)
-        {
-            rb.AddForce(transform.forward * dashVelocity, ForceMode.Impulse);
-            isDashing = false;
-            StartCoroutine(DashTime());
-        }
+        if (player.canMove)
+            Dash();
+        //if (Input.GetKeyDown(KeyCode.Space) && isDashing)
+        //{
+        //    rb.AddForce(transform.forward * dashVelocity, ForceMode.Impulse);
+        //    isDashing = false;
+        //    StartCoroutine(DashTime());
+        //}
     }
 
     private void Dash()

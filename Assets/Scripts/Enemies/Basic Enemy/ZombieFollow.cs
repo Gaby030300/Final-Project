@@ -12,19 +12,20 @@ public class ZombieFollow : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.SetBool("Patrolling",false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         destinationSetter = animator.GetComponent<AIDestinationSetter>();
         ai = animator.GetComponent<AIPath>();
         destinationSetter.target = player;
         ai.canMove = true;
-        if (animator.transform.GetChild(1).GetComponent<ZombieAttackArea>())
+        if (animator.transform.GetChild(1).GetComponent<ZombieAttackArea>() != null)
         {
             if(animator.transform.GetChild(1).GetComponent<ZombieAttackArea>().canAttack == true)
             {
                 animator.SetBool("Attacking", true);
             }
         }
-        else if (animator.transform.GetChild(1).GetComponent<MarthaAttackArea>())
+        else if (animator.transform.GetChild(1).GetComponent<MarthaAttackArea>() != null)
         {
             if(animator.transform.GetChild(1).GetComponent<MarthaAttackArea>().canAttack == true)
             {

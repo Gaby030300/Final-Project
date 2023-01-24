@@ -14,9 +14,11 @@ public class FallDamage : MonoBehaviour
     float startOfFall;
     PlayerHealth health;
     [SerializeField] Animator anim;
+    PlayerController playerController;
 
     private void Start()
     {
+        playerController = GetComponent<PlayerController>();
         health = GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody>();
     }
@@ -30,6 +32,10 @@ public class FallDamage : MonoBehaviour
 
         wasGrounded = grounded;
         wasFalling = isFalling;
+        if (playerController.canMove)
+        {
+            playerController.canMove = grounded;
+        }
         anim.SetBool("Grounded", grounded);
         anim.SetFloat("Falling", rb.velocity.y);
     }

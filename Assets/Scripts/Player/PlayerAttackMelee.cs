@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackMelee : MonoBehaviour
 {
     PlayerController player;
-
+    Rigidbody rb;
     [SerializeField] float timeToAttackMelee;
     [SerializeField] GameObject AttackMelee;
 
@@ -15,6 +15,7 @@ public class PlayerAttackMelee : MonoBehaviour
     {
         canAttackMelee = true;
         player = GetComponent<PlayerController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -27,6 +28,7 @@ public class PlayerAttackMelee : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") && canAttackMelee)
         {
+            rb.velocity = Vector3.zero;
             StartCoroutine(StopAttackingMelee());
         }
     }
