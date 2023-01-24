@@ -20,7 +20,7 @@ public class BasicEnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (!player.isDeath && pathfinder.activeInHierarchy)
+        if (!player.isDeath)
         {
             distance = Vector3.Distance(transform.position, player.transform.position);
             anim.SetFloat("Distance", distance);
