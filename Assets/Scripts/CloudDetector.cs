@@ -29,4 +29,10 @@ public class CloudDetector : MonoBehaviour
     {
         SoundManager.instance.PlaySFX("Big Monster");
     }
+
+    public void StopSouds()
+    {
+        SoundManager.instance.StopSFX();
+    }
+
 }

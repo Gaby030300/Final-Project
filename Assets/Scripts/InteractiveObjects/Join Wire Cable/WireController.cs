@@ -16,6 +16,8 @@ public class WireController : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     private bool _isDragStarted = false;
     private WiretaskController _wireTask;
     public bool isSuccess = false;
+
+    public bool trigered;
     private void Awake()
     {
         _image = GetComponent<Image>();
@@ -57,6 +59,7 @@ public class WireController : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             _wireTask.currentHoveredWire = this;
         }
     }
+
 
     public void SetColor(Color color)
     {

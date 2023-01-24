@@ -17,7 +17,9 @@ public class ZombieHealth : MonoBehaviour
     [SerializeField] List<Collider> colliders;
 
     [SerializeField] int hitsToDie;
-    public int hitsMelee;    
+    public int hitsMelee;
+
+    [SerializeField] ParticleSystem bloodPs;
 
     private void Start()
     {
@@ -57,6 +59,7 @@ public class ZombieHealth : MonoBehaviour
         {
             i.enabled = false;
         }
+        bloodPs.Play();
         Invoke("TurnOffSound", 1f);
     }
 

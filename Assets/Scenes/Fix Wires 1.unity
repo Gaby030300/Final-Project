@@ -686,6 +686,7 @@ GameObject:
   - component: {fileID: 444897012}
   - component: {fileID: 444897011}
   - component: {fileID: 444897010}
+  - component: {fileID: 444897015}
   m_Layer: 5
   m_Name: Wire2
   m_TagString: Untagged
@@ -828,6 +829,7 @@ MonoBehaviour:
   IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   isSuccess: 0
+  trigered: 0
 --- !u!114 &444897012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +883,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444897008}
   m_CullTransparentMesh: 1
+--- !u!61 &444897015
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444897008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.1937332, y: 0.19109726}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 97.33499, y: 102.61739}
+  m_EdgeRadius: 0
 --- !u!1 &458013473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1038,7 @@ GameObject:
   - component: {fileID: 473715610}
   - component: {fileID: 473715609}
   - component: {fileID: 473715608}
+  - component: {fileID: 473715613}
   m_Layer: 5
   m_Name: Wire2
   m_TagString: Untagged
@@ -1153,6 +1182,7 @@ MonoBehaviour:
   IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   isSuccess: 0
+  trigered: 0
 --- !u!114 &473715610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,6 +1236,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473715606}
   m_CullTransparentMesh: 1
+--- !u!61 &473715613
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473715606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.92902756, y: -2.0125542}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 101.58791, y: 101.587944}
+  m_EdgeRadius: 0
 --- !u!1 &556849665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1352,7 @@ GameObject:
   - component: {fileID: 616974974}
   - component: {fileID: 616974973}
   - component: {fileID: 616974972}
+  - component: {fileID: 616974977}
   m_Layer: 5
   m_Name: Wire4
   m_TagString: Untagged
@@ -1438,6 +1495,7 @@ MonoBehaviour:
   IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   isSuccess: 0
+  trigered: 0
 --- !u!114 &616974974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,6 +1549,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616974970}
   m_CullTransparentMesh: 1
+--- !u!61 &616974977
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616974970}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.6197624, y: -1.6273041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 104.59591, y: 101.588}
+  m_EdgeRadius: 0
 --- !u!1 &647977289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1817,7 @@ GameObject:
   - component: {fileID: 941519266}
   - component: {fileID: 941519265}
   - component: {fileID: 941519264}
+  - component: {fileID: 941519269}
   m_Layer: 5
   m_Name: Wire3
   m_TagString: Untagged
@@ -1876,6 +1961,7 @@ MonoBehaviour:
   IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   isSuccess: 0
+  trigered: 0
 --- !u!114 &941519266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1929,6 +2015,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941519262}
   m_CullTransparentMesh: 1
+--- !u!61 &941519269
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941519262}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5749016, y: 1.1879807}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 104.59577, y: 98.58008}
+  m_EdgeRadius: 0
 --- !u!1 &1046415371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,6 +2554,7 @@ GameObject:
   - component: {fileID: 1503661914}
   - component: {fileID: 1503661913}
   - component: {fileID: 1503661912}
+  - component: {fileID: 1503661917}
   m_Layer: 5
   m_Name: Wire3
   m_TagString: Untagged
@@ -2584,6 +2697,7 @@ MonoBehaviour:
   IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   isSuccess: 0
+  trigered: 0
 --- !u!114 &1503661914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2637,6 +2751,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503661910}
   m_CullTransparentMesh: 1
+--- !u!61 &1503661917
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503661910}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.6197243, y: 1.1879807}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 104.595985, y: 104.59581}
+  m_EdgeRadius: 0
 --- !u!1001 &1547547378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2731,6 +2871,10 @@ PrefabInstance:
     - target: {fileID: 3373077871527324661, guid: 77c9dc66c41a1c840a2568d930319813, type: 3}
       propertyPath: m_Name
       value: Fade Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373077871527324661, guid: 77c9dc66c41a1c840a2568d930319813, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c9dc66c41a1c840a2568d930319813, type: 3}
@@ -2957,6 +3101,7 @@ GameObject:
   - component: {fileID: 1749962885}
   - component: {fileID: 1749962884}
   - component: {fileID: 1749962883}
+  - component: {fileID: 1749962888}
   m_Layer: 5
   m_Name: Wire1
   m_TagString: Untagged
@@ -3100,6 +3245,7 @@ MonoBehaviour:
   IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   isSuccess: 0
+  trigered: 0
 --- !u!114 &1749962885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3153,6 +3299,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749962881}
   m_CullTransparentMesh: 1
+--- !u!61 &1749962888
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749962881}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.57492065, y: 2.306633}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 98.58002, y: 101.58789}
+  m_EdgeRadius: 0
 --- !u!1 &1804226986
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,6 +3415,7 @@ GameObject:
   - component: {fileID: 1860192794}
   - component: {fileID: 1860192793}
   - component: {fileID: 1860192792}
+  - component: {fileID: 1860192797}
   m_Layer: 5
   m_Name: Wire4
   m_TagString: Untagged
@@ -3386,6 +3559,7 @@ MonoBehaviour:
   IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   isSuccess: 0
+  trigered: 0
 --- !u!114 &1860192794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3439,6 +3613,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860192790}
   m_CullTransparentMesh: 1
+--- !u!61 &1860192797
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860192790}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.92900467, y: -0.12335014}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 101.587944, y: 104.59572}
+  m_EdgeRadius: 0
 --- !u!1 &1878388529
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,6 +3824,7 @@ GameObject:
   - component: {fileID: 2037837827}
   - component: {fileID: 2037837826}
   - component: {fileID: 2037837825}
+  - component: {fileID: 2037837830}
   m_Layer: 5
   m_Name: Wire1
   m_TagString: Untagged
@@ -3766,6 +3967,7 @@ MonoBehaviour:
   IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   isSuccess: 0
+  trigered: 0
 --- !u!114 &2037837827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3819,3 +4021,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037837823}
   m_CullTransparentMesh: 1
+--- !u!61 &2037837830
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037837823}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.6137886, y: -3.4791489}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 98.28457, y: 99.9762}
+  m_EdgeRadius: 0

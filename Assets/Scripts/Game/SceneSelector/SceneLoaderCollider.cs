@@ -15,11 +15,13 @@ public class SceneLoaderCollider : MonoBehaviour
     [SerializeField] SceneLoader sceneLoader;
     [SerializeField] TypeOfScene typeOfScene;
     [SerializeField] string sceneName;
-    [SerializeField] BoxCollider detector;
+    [SerializeField] Collider detector;
     [SerializeField] Transform player;
     [SerializeField] Transform pointToTeleport;
     [SerializeField] List<GameObject> toDesActivate,toActivate;
     [SerializeField] OpenMechanismWires openMechanismWires;
+
+    bool puzleSolved;
     private void Start()
     {
         sceneLoader = SceneLoader.instance;
@@ -29,10 +31,11 @@ public class SceneLoaderCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(typeOfScene.Equals(TypeOfScene.puzzleScene))
+            if(typeOfScene.Equals(TypeOfScene.puzzleScene) && !puzleSolved)
             {
+                detector.enabled = false;
+                puzleSolved = true;
                 openMechanismWires.AllowToMove();
-                detector.enabled = false;                
             }
             else if(typeOfScene.Equals(TypeOfScene.insideScene))
             {

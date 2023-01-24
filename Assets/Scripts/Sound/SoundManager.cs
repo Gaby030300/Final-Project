@@ -55,6 +55,12 @@ public class SoundManager : MonoBehaviour
 
         }
     }
+
+    public void StopSFX()
+    {
+        sfxSource.Stop();
+    }
+
     public void ToggleMusic()
     {
         musicSource.mute = !musicSource.mute;

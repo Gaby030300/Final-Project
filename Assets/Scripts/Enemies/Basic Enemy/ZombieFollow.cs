@@ -13,7 +13,8 @@ public class ZombieFollow : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("Patrolling",false);
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        if(GameObject.FindGameObjectWithTag("Player"))
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         destinationSetter = animator.GetComponent<AIDestinationSetter>();
         ai = animator.GetComponent<AIPath>();
         destinationSetter.target = player;

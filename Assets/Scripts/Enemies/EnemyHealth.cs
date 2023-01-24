@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     Animator anim;
     public bool isAlive, canBeHurt;
 
+    [SerializeField] ParticleSystem toxicCloud;
     private void Start()
     {
         isAlive = true;
@@ -49,16 +50,6 @@ public class EnemyHealth : MonoBehaviour
         SoundManager.instance.PlaySFX("Zombie Die");
         anim.SetTrigger("Die");
         Invoke("TurnOffSound",1f);
-        //gameObject.SetActive(false);
+        toxicCloud.Play();
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Ball") && canBeHurt)
-    //    {
-    //        Debug.Log("Herido");
-    //        RestHealt(5);
-    //        canBeHurt = false;
-    //    }
-    //}
 }

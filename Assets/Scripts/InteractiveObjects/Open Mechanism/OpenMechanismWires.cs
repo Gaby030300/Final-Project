@@ -11,6 +11,8 @@ public class OpenMechanismWires : MonoBehaviour
     [SerializeField] float zPosition;
     public bool canMove;
 
+    [SerializeField] SceneLoaderCollider open;
+
     private void Start()
     {
         DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
@@ -27,5 +29,6 @@ public class OpenMechanismWires : MonoBehaviour
     public void AllowToMove()
     {
         canMove = true;
+        open.enabled = false;
     }
 }
