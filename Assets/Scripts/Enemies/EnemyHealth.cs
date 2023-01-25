@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     Animator anim;
     public bool isAlive, canBeHurt;
 
-    [SerializeField] ParticleSystem toxicCloud;
+    [SerializeField] ParticleSystem toxicCloud, bloodPS;
     private void Start()
     {
         isAlive = true;
@@ -35,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator AnimationDamage(int healToloss)
     {
+        bloodPS.Play();
         SoundManager.instance.PlaySFX("Zombie Hurt");
         currentHealt -= healToloss;
         anim.SetBool("TakingDamage", true);

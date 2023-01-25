@@ -4758,8 +4758,10 @@ MonoBehaviour:
   - {fileID: 85892576}
   - {fileID: 1063278392}
   - {fileID: 814164136}
+  - {fileID: 2121992437}
   toActivate:
   - {fileID: 789286217}
+  - {fileID: 2121992437}
   openMechanismWires: {fileID: 0}
 --- !u!1001 &110645900
 PrefabInstance:
@@ -68841,7 +68843,7 @@ PrefabInstance:
       objectReference: {fileID: 477149497}
     - target: {fileID: 5335413229369190402, guid: cc81ea4b8ebdb424987fccce85120954, type: 3}
       propertyPath: speedZip
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5335413229369190402, guid: cc81ea4b8ebdb424987fccce85120954, type: 3}
       propertyPath: targetZip
@@ -72043,6 +72045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c9dc66c41a1c840a2568d930319813, type: 3}
+--- !u!1 &2121992437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3373077871527324661, guid: 77c9dc66c41a1c840a2568d930319813, type: 3}
+  m_PrefabInstance: {fileID: 2121992436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2126527436
 PrefabInstance:
   m_ObjectHideFlags: 0

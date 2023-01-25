@@ -15,6 +15,11 @@ public class FadeTransition : MonoBehaviour
         image.DOColor(new Color(image.color.r, image.color.g, image.color.b,0), timeToFade);        
     }
 
+    private void OnDisable()
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 255);
+    }
+
     private void Awake()
     {
         Time.timeScale = 1f;

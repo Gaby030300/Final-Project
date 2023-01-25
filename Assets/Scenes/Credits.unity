@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -153, y: 1806}
+  m_AnchoredPosition: {x: -153, y: 1798}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &150914984
@@ -316,10 +316,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "HIGH TOXIC\n\nVideogame created for the final junior unity developer project.\n\nGameplay
-    Programmers.\nDaniel Torres & Gabriela Bohorquez.\n\n3D Artist and Animator.\nSeb\xE1stian
-    Mendoza\n\nAssets:\n Unity Store, Freepik\n\nSounds And Effects: \nFreeSounds.com\nSounds
-    from ZapSplat\n\nVersion 1.0.2023\n\n"
+  m_text: "HIGH TOXIC\n\nGameplay Programmers.\nDaniel Torres & Gabriela Bohorquez.\n\n3D
+    Artist and Animator.\nSeb\xE1stian Mendoza\n\nAssets:\n Unity Store, Freepik\n\nSounds
+    And Effects: \nFreeSounds.com\nSounds from ZapSplat\n\nVersion 1.0.2023\n\nThanks
+    for Playing"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: caa2c7b3cdece4c4e8227c53e810c541, type: 2}
   m_sharedMaterial: {fileID: -1795591593015154155, guid: caa2c7b3cdece4c4e8227c53e810c541, type: 2}
@@ -2513,7 +2513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14, y: 0}
+  m_AnchoredPosition: {x: -14, y: 4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838832109
@@ -2536,10 +2536,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "HIGH TOXIC\n\nVideogame created for the final junior unity developer project.\n\nGameplay
-    Programmers.\nDaniel Torres & Gabriela Bohorquez.\n\n3D Artist and Animator.\nSeb\xE1stian
-    Mendoza\n\nAssets:\n Unity Store, Freepik\n\nSounds And Effects: \nFreeSounds.com\nSounds
-    from ZapSplat\n\nVersion 1.0.2023\n\n"
+  m_text: "HIGH TOXIC\n\nGameplay Programmers.\nDaniel Torres & Gabriela Bohorquez.\n\n3D
+    Artist and Animator.\nSeb\xE1stian Mendoza\n\nAssets:\n Unity Store, Freepik\n\nSounds
+    And Effects: \nFreeSounds.com\nSounds from ZapSplat\n\nVersion 1.0.2023\n\nThanks
+    for Playing"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: caa2c7b3cdece4c4e8227c53e810c541, type: 2}
   m_sharedMaterial: {fileID: -1795591593015154155, guid: caa2c7b3cdece4c4e8227c53e810c541, type: 2}
