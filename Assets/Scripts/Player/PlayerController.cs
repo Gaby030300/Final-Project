@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(this);
         }
         else
         {
@@ -80,19 +79,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    //void LateUpdate()
-    //{
-    //    if (!isDeath)
-    //    {
-    //        Movement();
-    //        if (canMove)
-    //        {
-    //            FollowMouseLook();
-    //            ActivateZipLine();
-    //        }
-    //    }
-    //}
 
     private void Movement()
     {
@@ -168,8 +154,8 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Key"))
-        {
+        if (other.CompareTag("Key") && OpenMechanism.keyCount<1)
+        {            
             SoundManager.instance.PlaySFX("Card");
             OpenMechanism.keyCount++;
             Destroy(other.gameObject);

@@ -15,6 +15,11 @@ public class UIController : MonoBehaviour
     [SerializeField] Image healtBar;
     [SerializeField] GameObject configurationPanel;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Confined;        
+    }
+
     void Update()
     {
         textBullet.text = shootController.currentAmmunition + "/" + shootController.maxAmmunition;

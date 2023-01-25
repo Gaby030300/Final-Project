@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using DG.Tweening;
 
 
@@ -11,6 +12,7 @@ public class OpenMechanism : MonoBehaviour
     [SerializeField] float xPosition;
     [SerializeField] float yPosition;
     [SerializeField] float zPosition;
+    [SerializeField] UnityEvent deActivateCard;
     private void Start()
     {
         DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
@@ -20,6 +22,7 @@ public class OpenMechanism : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && keyCount >= maxKey)
         {
+            deActivateCard.Invoke();
             keyCount--;
             transform.DOMove(new Vector3(xPosition, yPosition, zPosition), 1);            
         }

@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class ActivateCard : MonoBehaviour
+{
+    [SerializeField] UnityEvent activateCard;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+            activateCard.Invoke();
+    }
+}
