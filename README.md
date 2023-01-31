@@ -1,1 +1,4 @@
-# Final-Project
+# HIGH TOXIC
+![HighToxic](https://user-images.githubusercontent.com/44000056/215908046-1ed67980-94b5-492d-8f6c-d11b7def100a.png)
+In this post-pandemic world, the streets have become dangerous and overrun with dangerous creatures. As a result, the survivors have been forced to flee to the rooftops of tall buildings. The player must navigate this treacherous new world, scavenging for supplies and fighting off the creatures that lurk. The game world is a sprawling metropolis, with towering skyscrapers stretching as far as the eye can see. The player must explore these buildings, searching for valuable resources and fighting off the various creatures that have taken over the streets. Overall, this game world is a dark and dangerous place, but it is also full of opportunities for the player to make a difference and shape the future of the post-pandemic world.
+
